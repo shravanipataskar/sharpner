@@ -1,29 +1,142 @@
-import { Link } from 'react-router-dom'
-import SectionHeading from '../common/SectionHeading.jsx'
-
-const channels = [
-  { title: 'Creative Lab', to: '/creative-lab' },
-  { title: 'Dhol Pathak', to: '/join-dhol-pathak' },
-  { title: 'Our Gallery', to: '/gallery' },
-  { title: 'Collaborate', to: '/collaborate' },
-]
-
 function ChannelsSection() {
   return (
-    <section className="content-section channels-section">
-      <SectionHeading
-        eyebrow="Explore"
-        title="More ways to make something happen"
-      />
-      <div className="channel-list">
-        {channels.map((channel) => (
-          <Link key={channel.to} to={channel.to}>
-            {channel.title}<span aria-hidden="true">↗</span>
-          </Link>
-        ))}
+    <section className="channels-section py-5">
+      <div className="container">
+
+        <div className="text-center mb-5">
+          <h2 className="section-title">OUR CHANNELS</h2>
+          <div className="title-line"></div>
+        </div>
+
+        <div className="row g-4">
+
+          {/* Marathi Channel */}
+          <div className="col-lg-6">
+            <div className="channel-card">
+
+              <img
+                src="/assets/img/marathi-channel.png"
+                className="img-fluid channel-image"
+                alt="Sharpner Marathi"
+              />
+
+              <div className="channel-content">
+
+                <h4>Marathi Channel</h4>
+
+                <p>
+                  Creative storytelling, comedy sketches and kids acting
+                  content for Marathi audiences.
+                </p>
+
+                <div className="channel-stats">
+
+                  <div>
+                    <i className="fas fa-users"></i>
+                    <span>365K+</span>
+                  </div>
+
+                  <div>
+                    <i className="fas fa-play-circle"></i>
+                    <span>125K+</span>
+                  </div>
+
+                </div>
+
+                <div className="channel-links">
+
+                  <a
+                    href="https://www.youtube.com/@sharpnerWorld"
+                    className="btn btn-youtube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-youtube"></i>
+                    YouTube
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/sharpnerworld/"
+                    className="btn btn-instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-instagram"></i>
+                    Instagram
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Hindi Channel */}
+          <div className="col-lg-6">
+            <div className="channel-card">
+
+              <img
+                src="/assets/img/hindi-channel.png"
+                className="img-fluid channel-image"
+                alt="Sharpner Hindi"
+              />
+
+              <div className="channel-content">
+
+                <h4>Hindi Channel</h4>
+
+                <p>
+                  Entertaining stories, educational experiments and creative
+                  reels for young creators.
+                </p>
+
+                <div className="channel-stats">
+
+                  <div>
+                    <i className="fas fa-users"></i>
+                    <span>16.4K+</span>
+                  </div>
+
+                  <div>
+                    <i className="fas fa-play-circle"></i>
+                    <span>110K+</span>
+                  </div>
+
+                </div>
+
+                <div className="channel-links">
+
+                  <a
+                    href="https://www.youtube.com/@sharpnerWorld"
+                    className="btn btn-youtube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-youtube"></i>
+                    YouTube
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/sharpnerhindi?igsh=eTNyYjVpdnZxM2xi"
+                    className="btn btn-instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-instagram"></i>
+                    Instagram
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
-  )
+  );
 }
 
-export default ChannelsSection
+export default ChannelsSection;
