@@ -1,4 +1,5 @@
-import { Link, NavLink } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const navigation = [
   { label: 'About', to: '/about' },
@@ -8,6 +9,41 @@ const navigation = [
 ]
 
 function Header() {
+  const { pathname } = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const isBrandDealsPage = pathname === '/collaborate'
+
+  if (isBrandDealsPage) {
+    return (
+      <header className="site-header brand-deals-header">
+        <Link className="brand-deals-logo" to="/" aria-label="Sharpner home">
+          <img src="/assets/images/Logo3.png" alt="Sharpner" />
+        </Link>
+        <button
+          className="brand-deals-menu-toggle"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="brand-deals-navigation"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav
+          className={`site-nav${menuOpen ? ' is-open' : ''}`}
+          id="brand-deals-navigation"
+          aria-label="Main navigation"
+        >
+          <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
+          <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
+          <NavLink to="/collaborate" onClick={() => setMenuOpen(false)}>Brand Deals</NavLink>
+        </nav>
+      </header>
+    )
+  }
+
   return (
     <header className="site-header">
       <Link className="site-brand" to="/" aria-label="Sharpner home">

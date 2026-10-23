@@ -1,36 +1,29 @@
 function ChannelsSection() {
   return (
-    <section className="channels-section py-5">
+    <section className="channels-section">
       <div className="container">
-
         <div className="text-center mb-5">
           <h2 className="section-title">OUR CHANNELS</h2>
           <div className="title-line"></div>
         </div>
 
         <div className="row g-4">
-
-          {/* Marathi Channel */}
           <div className="col-lg-6">
             <div className="channel-card">
-
               <img
-                src="/assets/img/marathi-channel.png"
+                src="/assets/images/marathi-channel.png"
                 className="img-fluid channel-image"
                 alt="Sharpner Marathi"
               />
 
               <div className="channel-content">
-
                 <h4>Marathi Channel</h4>
-
                 <p>
                   Creative storytelling, comedy sketches and kids acting
                   content for Marathi audiences.
                 </p>
 
                 <div className="channel-stats">
-
                   <div>
                     <i className="fas fa-users"></i>
                     <span>365K+</span>
@@ -40,11 +33,9 @@ function ChannelsSection() {
                     <i className="fas fa-play-circle"></i>
                     <span>125K+</span>
                   </div>
-
                 </div>
 
                 <div className="channel-links">
-
                   <a
                     href="https://www.youtube.com/@sharpnerWorld"
                     className="btn btn-youtube"
@@ -64,34 +55,27 @@ function ChannelsSection() {
                     <i className="fab fa-instagram"></i>
                     Instagram
                   </a>
-
                 </div>
-
               </div>
             </div>
           </div>
 
-          {/* Hindi Channel */}
           <div className="col-lg-6">
             <div className="channel-card">
-
               <img
-                src="/assets/img/hindi-channel.png"
+                src="/assets/images/hindi-channel.png"
                 className="img-fluid channel-image"
                 alt="Sharpner Hindi"
               />
 
               <div className="channel-content">
-
                 <h4>Hindi Channel</h4>
-
                 <p>
                   Entertaining stories, educational experiments and creative
                   reels for young creators.
                 </p>
 
                 <div className="channel-stats">
-
                   <div>
                     <i className="fas fa-users"></i>
                     <span>16.4K+</span>
@@ -101,11 +85,9 @@ function ChannelsSection() {
                     <i className="fas fa-play-circle"></i>
                     <span>110K+</span>
                   </div>
-
                 </div>
 
                 <div className="channel-links">
-
                   <a
                     href="https://www.youtube.com/@sharpnerWorld"
                     className="btn btn-youtube"
@@ -125,18 +107,14 @@ function ChannelsSection() {
                     <i className="fab fa-instagram"></i>
                     Instagram
                   </a>
-
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
-  );
+  )
 }
 
-export default ChannelsSection;
+export default ChannelsSection

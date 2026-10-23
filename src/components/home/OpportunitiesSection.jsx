@@ -1,17 +1,14 @@
+import { Link } from 'react-router-dom'
+
 function OpportunitiesSection() {
   return (
     <section className="join-section">
-
       <div className="join-title-image">
-        <img
-          src="/assets/img/Let.png"
-          alt="Let's Join Us"
-        />
+        <img src="/assets/images/Let.png" alt="Let's join us" />
       </div>
 
       <div className="join-cards">
-
-        <a href="/give-audition" className="join-card yellow-card">
+        <Link to="/give-audition" className="join-card yellow-card">
           <div className="card-content">
             <h3>
               BE FEATURED <br />
@@ -20,9 +17,9 @@ function OpportunitiesSection() {
             </h3>
             <button>APPLY NOW</button>
           </div>
-        </a>
+        </Link>
 
-        <a href="/join-dhol-pathak" className="join-card orange-card">
+        <Link to="/join-dhol-pathak" className="join-card orange-card">
           <div className="card-content">
             <h3>
               JOIN THE <br />
@@ -30,17 +27,13 @@ function OpportunitiesSection() {
               PATHAK
             </h3>
 
-            <button>JOIN NOW</button>
+            <button>JOIN NOW            </button>
           </div>
 
-          <img
-            src="/assets/img/dhol.png"
-            className="dhol-img"
-            alt="Dhol Pathak"
-          />
-        </a>
+          <img src="/assets/images/dhol.png" className="dhol-img" alt="" />
+        </Link>
 
-        <a href="/submit-idea" className="join-card blue-card">
+        <Link to="/submit-idea" className="join-card blue-card">
           <div className="card-content">
             <h3>
               SUBMIT YOUR <br />
@@ -51,15 +44,9 @@ function OpportunitiesSection() {
             <button>SUBMIT NOW</button>
           </div>
 
-          <img
-            src="/assets/img/creative.png"
-            className="creative-img"
-            alt="Creative"
-          />
-        </a>
-
+          <img src="/assets/images/creative.png" className="creative-img" alt="" />
+        </Link>
       </div>
-
     </section>
   )
 }

@@ -33,7 +33,7 @@ body{
 
    /* background:
     linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url('../img/hero-pattern.png');
+    url('/assets/images/hero-pattern.png');
 
 background-size:cover;
 background-position:center;
@@ -111,7 +111,7 @@ background-repeat:no-repeat; */
 
     background:
         linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.25)), /* NEW */
-        url('../img/hero-pattern.png') center center no-repeat;
+        url('/assets/images/hero-pattern.png') center center no-repeat;
 
     background-size:95%;
     background-position:center;
@@ -261,17 +261,17 @@ background-repeat:no-repeat; */
 /* CARD IMAGE */
 
 .yellow-card{
-    background: url('../img/video.png') no-repeat center;
+    background: url('/assets/images/video.png') no-repeat center;
     background-size:cover;
 }
 
 .orange-card{
-    background: url('../img/dhol.png') no-repeat left center;
+    background: url('/assets/images/dhol.png') no-repeat left center;
     background-size: cover;
 }
 
 .blue-card{
-    background: url('../img/creative - Copy.png') no-repeat left center;
+    background: url('/assets/images/creative - Copy.png') no-repeat left center;
     background-size: cover;
 }
 
@@ -1725,6 +1725,16 @@ background-repeat:no-repeat; */
     .what-banner {
         height: 320px !important;
     }
+
+    .faq-item[open] .faq-answer {
+        height: auto;
+        padding: 10px 16px 16px;
+    }
+
+    .faq-item[open] .faq-question::after {
+        content: "\2212";
+    }
+
     .what-items {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
@@ -1746,6 +1756,27 @@ background-repeat:no-repeat; */
     }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+    .footer-main {
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+    }
 
+    .footer-links {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
 
+@media (min-width: 992px) {
+    .faq-card .section-header h2 {
+        font-size: 30px;
+        white-space: nowrap;
+    }
 
+    .faq-right img {
+        height: 260px;
+        object-fit: cover;
+        object-position: 75% center;
+    }
+}
