@@ -1,0 +1,1066 @@
+
+/* ==========================================
+   SHARPNER CHILD AUDITION REGISTRATION
+   ========================================== */
+
+.child-audition-page {
+  --audition-yellow: #ffd500;
+  --audition-bg: #1a1a1a;
+  --audition-card: #171717;
+  --audition-input: #242424;
+  --audition-border: #a78a00;
+  --audition-text: #f5f5f5;
+
+  width: 100%;
+  min-height: 700px;
+  padding: 48px 24px 55px;
+  color: var(--audition-text);
+  background: var(--audition-bg);
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+}
+
+.child-audition-page *,
+.child-audition-page *::before,
+.child-audition-page *::after {
+  box-sizing: border-box;
+}
+
+.audition-container {
+  width: 100%;
+  max-width: 1070px;
+  margin: 0 auto;
+}
+
+/* Page introduction */
+
+.audition-intro {
+  text-align: center;
+}
+
+.audition-intro h1,
+.audition-registration-heading h2 {
+  position: relative;
+  margin: 0;
+  padding: 0 10px 12px;
+  border-bottom: 1px solid rgba(255, 213, 0, 0.24);
+  color: var(--audition-yellow);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.audition-intro h1::after,
+.audition-registration-heading h2::after {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 60px;
+  height: 3px;
+  content: "";
+  transform: translateX(-50%);
+  border-radius: 5px;
+  background: var(--audition-yellow);
+}
+
+.audition-intro p,
+.audition-registration-heading p {
+  max-width: 800px;
+  margin: 17px auto 0;
+  color: #c5c5c5;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.audition-divider {
+  height: 5px;
+  margin: 42px 0 38px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    #613c3c,
+    #294e4a,
+    #6c5800
+  );
+}
+
+.audition-registration-heading {
+  margin-bottom: 42px;
+}
+
+/* Main grid */
+
+.audition-main-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 190px;
+  align-items: start;
+  gap: 20px;
+}
+
+/* Steps sidebar */
+
+.audition-steps-card {
+  padding: 20px 17px;
+  border: 2px solid var(--audition-yellow);
+  border-radius: 25px;
+  background: linear-gradient(145deg, #111, #202020);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+.audition-steps-card h2 {
+  margin: 0 0 22px;
+  color: var(--audition-yellow);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.audition-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.audition-step {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  border: none;
+  color: #8d8d8d;
+  background: transparent;
+  cursor: default;
+  font-family: inherit;
+  text-align: left;
+}
+
+.audition-step.completed,
+.audition-step.active {
+  color: #fff;
+}
+
+.audition-step-number {
+  display: flex;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #887200;
+  border-radius: 50%;
+  color: #b49a00;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.audition-step.completed .audition-step-number,
+.audition-step.active .audition-step-number {
+  border-color: var(--audition-yellow);
+  color: #101010;
+  background: var(--audition-yellow);
+}
+
+.audition-step-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Form panel */
+
+.audition-form-card {
+  min-width: 0;
+  padding: 18px;
+  border: 2px solid var(--audition-yellow);
+  border-radius: 25px;
+  background: linear-gradient(145deg, #0d0d0d, #1b1b1b);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+.audition-section-title {
+  margin-bottom: 22px;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--audition-yellow);
+  border-radius: 5px 5px 0 0;
+  color: var(--audition-yellow);
+  background: rgba(255, 213, 0, 0.055);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.audition-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px 20px;
+  padding: 0 12px 14px;
+}
+
+.audition-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.audition-field > label,
+.audition-field legend {
+  margin-bottom: 10px;
+  color: var(--audition-yellow);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.audition-required {
+  color: var(--audition-yellow);
+}
+
+.audition-optional {
+  color: #c5c5c5;
+  font-weight: 600;
+}
+
+.audition-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Inputs */
+
+.child-audition-page input:not([type="checkbox"]):not([type="radio"]),
+.child-audition-page select,
+.child-audition-page textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 2px solid rgba(255, 213, 0, 0.34);
+  border-radius: 11px;
+  outline: none;
+  color: #f5f5f5;
+  background: var(--audition-input);
+  box-shadow: 0 5px 12px rgba(255, 213, 0, 0.04);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.child-audition-page input::placeholder,
+.child-audition-page textarea::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.child-audition-page input:focus,
+.child-audition-page select:focus,
+.child-audition-page textarea:focus {
+  border-color: var(--audition-yellow);
+  box-shadow: 0 0 12px rgba(255, 213, 0, 0.1);
+}
+
+.child-audition-page select {
+  cursor: pointer;
+}
+
+.child-audition-page select option {
+  color: #fff;
+  background: #242424;
+}
+
+.child-audition-page textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.child-audition-page input[readonly] {
+  opacity: 0.85;
+}
+
+/* Radio and checkbox groups */
+
+.audition-radio-group,
+.audition-checkbox-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.audition-radio-group legend,
+.audition-checkbox-group legend {
+  margin-bottom: 14px;
+  padding: 0;
+}
+
+.audition-radio-options,
+.audition-checkbox-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px 15px;
+}
+
+.audition-radio-option,
+.audition-checkbox-option {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--audition-yellow);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.audition-radio-option input,
+.audition-checkbox-option input {
+  flex: 0 0 auto;
+  width: 13px;
+  height: 13px;
+  margin: 3px 0 0;
+  accent-color: var(--audition-yellow);
+  cursor: pointer;
+}
+
+/* Instructions */
+
+.audition-instructions {
+  padding: 16px;
+  border: 2px solid var(--audition-yellow);
+  border-radius: 13px;
+  color: #ededed;
+  background: #222;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.audition-help-text {
+  margin: -7px 0 0;
+  color: #a5a5a5;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* Errors */
+
+.audition-error {
+  display: block;
+  margin-top: 7px;
+  color: #ff8c83;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.audition-submit-error {
+  margin: 12px;
+  padding: 12px;
+  border: 1px solid #c74c43;
+  border-radius: 9px;
+  color: #ffb5ae;
+  background: rgba(180, 30, 20, 0.1);
+  font-size: 12px;
+}
+
+/* Consent */
+
+.audition-consent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.audition-consent-item > label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--audition-yellow);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.audition-consent-item input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  margin-top: 3px;
+  accent-color: var(--audition-yellow);
+}
+
+/* Child photo */
+
+.audition-child-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 12px;
+}
+
+.audition-child-image img {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Navigation */
+
+.audition-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin: 22px 0 0 240px;
+}
+
+.audition-previous,
+.audition-next {
+  display: inline-flex;
+  min-height: 37px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.audition-previous {
+  margin-right: auto;
+  color: #fff;
+  background: #46566d;
+}
+
+.audition-next {
+  color: #080808;
+  background: linear-gradient(135deg, #ffdc00, #ffc000);
+  box-shadow: 0 5px 20px rgba(255, 213, 0, 0.22);
+}
+
+.audition-previous:hover,
+.audition-next:hover {
+  transform: translateY(-2px);
+}
+
+.audition-next:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* Success modal */
+
+.audition-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.audition-success-modal {
+  width: 100%;
+  max-width: 500px;
+  padding: 55px 35px 45px;
+  border: 2px solid #927b00;
+  border-radius: 9px;
+  background: #242424;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+.audition-success-icon {
+  margin-bottom: 30px;
+  font-size: 52px;
+}
+
+.audition-success-modal h2 {
+  margin: 0 0 12px;
+  color: var(--audition-yellow);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.audition-success-modal p {
+  margin: 0 auto 30px;
+  color: #bdbdbd;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.audition-success-modal button {
+  min-width: 48px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: #2864e8;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .audition-main-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .audition-child-image {
+    display: none;
+  }
+
+  .audition-navigation {
+    margin-left: 218px;
+  }
+}
+
+@media (max-width: 650px) {
+  .child-audition-page {
+    padding: 30px 15px 40px;
+  }
+
+  .audition-intro p,
+  .audition-registration-heading p {
+    font-size: 14px;
+  }
+
+  .audition-divider {
+    margin: 28px 0;
+  }
+
+  .audition-registration-heading {
+    margin-bottom: 28px;
+  }
+
+  .audition-main-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .audition-steps-card {
+    padding: 18px;
+  }
+
+  .audition-steps-card h2 {
+    margin-bottom: 18px;
+    font-size: 19px;
+  }
+
+  .audition-steps-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 10px;
+  }
+
+  .audition-step {
+    gap: 8px;
+  }
+
+  .audition-step-number {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .audition-step-label {
+    font-size: 11px;
+  }
+
+  .audition-form-card {
+    padding: 13px;
+    border-radius: 20px;
+  }
+
+  .audition-fields-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 0 5px 12px;
+  }
+
+  .audition-full-width {
+    grid-column: auto;
+  }
+
+  .audition-section-title {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .audition-navigation {
+    margin-left: 0;
+  }
+
+  .audition-success-modal {
+    padding: 40px 22px 32px;
+  }
+
+  .audition-success-modal h2 {
+    font-size: 22px;
+  }
+}
+
+/* Layout for the registration form markup */
+.child-audition-page {
+  min-height: 0;
+  padding: 30px 0 14px;
+  background: #1a1a1a;
+}
+
+.audition-container {
+  width: min(80%, 1070px);
+  max-width: none;
+}
+
+.audition-intro h2,
+.audition-registration-heading h2 {
+  position: relative;
+  margin: 0;
+  padding: 0 10px 8px;
+  border-bottom: 1px solid rgba(255, 213, 0, 0.2);
+  color: var(--audition-yellow);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.audition-intro h2::after,
+.audition-registration-heading h2::after {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 42px;
+  height: 3px;
+  content: "";
+  transform: translateX(-50%);
+  border-radius: 5px;
+  background: var(--audition-yellow);
+}
+
+.audition-intro p,
+.audition-registration-heading p {
+  max-width: 700px;
+  margin: 11px auto 0;
+  color: #c5c5c5;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.audition-divider {
+  height: 4px;
+  margin: 25px 0;
+}
+
+.audition-registration-heading {
+  margin-bottom: 27px;
+}
+
+.audition-registration-heading p {
+  margin-top: 10px;
+}
+
+.audition-layout {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.95fr) minmax(0, 2fr) minmax(110px, 0.95fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.audition-steps {
+  padding: 13px;
+  border: 2px solid var(--audition-yellow);
+  border-radius: 17px;
+  background: linear-gradient(145deg, #111, #202020);
+}
+
+.audition-steps h2 {
+  margin: 0 0 12px;
+  color: var(--audition-yellow);
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.audition-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.audition-step {
+  gap: 9px;
+  cursor: pointer;
+}
+
+.audition-step-number {
+  flex-basis: 23px;
+  width: 23px;
+  height: 23px;
+  border-width: 1px;
+  font-size: 10px;
+}
+
+.audition-step-label {
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.audition-form-column {
+  min-width: 0;
+}
+
+.audition-form-card {
+  padding: 11px;
+  border-radius: 16px;
+}
+
+.audition-card-heading {
+  margin: 0 0 13px;
+  padding: 8px 11px;
+  border-bottom: 1px solid var(--audition-yellow);
+  color: var(--audition-yellow);
+  background: rgba(255, 213, 0, 0.055);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.audition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 15px 14px;
+  padding: 0 3px 4px;
+}
+
+.audition-field {
+  gap: 5px;
+}
+
+.audition-field > label,
+.audition-choice-title {
+  margin: 0;
+  color: var(--audition-yellow);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.audition-field input:not([type="checkbox"]):not([type="radio"]),
+.audition-field select,
+.audition-field textarea {
+  min-height: 29px;
+  padding: 6px 9px;
+  border-width: 1px;
+  border-radius: 8px;
+  font-size: 9px;
+}
+
+.audition-field textarea {
+  min-height: 74px;
+}
+
+.required-mark {
+  color: var(--audition-yellow);
+}
+
+.audition-choice-group {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.audition-radio-options,
+.audition-checkbox-options {
+  gap: 8px 10px;
+}
+
+.audition-radio,
+.audition-checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 5px;
+  color: #d9d9d9;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.audition-radio input,
+.audition-checkbox input,
+.audition-declaration input {
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  margin: 1px 0 0;
+  accent-color: var(--audition-yellow);
+}
+
+.audition-spacer {
+  height: 14px;
+}
+
+.audition-info-box {
+  margin: 0 3px 15px;
+  padding: 10px;
+  border: 1px solid rgba(255, 213, 0, 0.3);
+  border-radius: 8px;
+  color: #ddd;
+  background: #222;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.audition-help-text {
+  margin: 8px 3px 0;
+}
+
+.audition-declarations {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 3px 15px;
+}
+
+.audition-declaration {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #ddd;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.audition-consent-grid {
+  margin-top: 5px;
+}
+
+.audition-child-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.audition-child-image img {
+  width: 100%;
+  max-width: 145px;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+.audition-navigation {
+  margin: 15px 0 0;
+}
+
+.audition-previous,
+.audition-next {
+  min-height: 27px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 9px;
+}
+
+.audition-submit-error {
+  margin: 10px 3px;
+}
+
+.audition-site-header {
+  min-height: 66px;
+  padding-inline: max(24px, calc((100% - 1070px) / 2));
+}
+
+.audition-site-header .brand-deals-logo img {
+  height: 60px;
+}
+
+.audition-site-header .site-nav {
+  gap: 6px;
+}
+
+.audition-site-header .site-nav a {
+  padding: 6px 9px;
+  font-size: 10px;
+}
+
+#root:has(.child-audition-page) .footer-main {
+  grid-template-columns: minmax(130px, 1fr) auto minmax(0, 1.3fr);
+  gap: 12px;
+  padding: 9px max(24px, calc((100% - 1070px) / 2));
+}
+
+#root:has(.child-audition-page) .footer-brand h4 {
+  font-size: 18px;
+}
+
+#root:has(.child-audition-page) .footer-brand p {
+  font-size: 9px;
+}
+
+#root:has(.child-audition-page) .footer-follow {
+  gap: 7px;
+  padding: 5px 12px;
+}
+
+#root:has(.child-audition-page) .footer-follow span,
+#root:has(.child-audition-page) .footer-links a,
+#root:has(.child-audition-page) .footer-bottom {
+  font-size: 8px;
+}
+
+#root:has(.child-audition-page) .footer-follow a {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+}
+
+#root:has(.child-audition-page) .footer-links a {
+  padding: 0 5px;
+  font-size: 7px;
+  line-height: 1.4;
+}
+
+#root:has(.child-audition-page) .footer-links {
+  min-width: 0;
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+#root:has(.child-audition-page) .footer-links a {
+  max-width: 70px;
+  text-align: center;
+}
+
+#root:has(.child-audition-page) .footer-bottom {
+  padding: 7px max(24px, calc((100% - 1070px) / 2));
+}
+
+@media (max-width: 1000px) {
+  .audition-layout {
+    grid-template-columns: minmax(140px, 0.95fr) minmax(0, 2fr) minmax(100px, 0.85fr);
+  }
+}
+
+@media (min-width: 701px) and (max-width: 991px) {
+  .audition-site-header {
+    min-height: 66px;
+    flex-wrap: nowrap;
+    padding: 3px 24px;
+  }
+
+  .audition-site-header .brand-deals-menu-toggle {
+    display: none;
+  }
+
+  .audition-site-header .site-nav {
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .audition-container {
+    width: min(92%, 540px);
+  }
+
+  .audition-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .audition-steps {
+    padding: 12px;
+  }
+
+  .audition-steps-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .audition-child-image {
+    display: none;
+  }
+
+  .audition-form-card {
+    padding: 13px;
+  }
+
+  .audition-grid {
+    gap: 14px 10px;
+  }
+
+  .audition-navigation {
+    margin-top: 13px;
+  }
+
+  .audition-site-header {
+    min-height: 62px;
+    padding-inline: 16px;
+  }
+
+  .audition-site-header .brand-deals-logo img {
+    height: 54px;
+  }
+
+  #root:has(.child-audition-page) .footer-main {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  #root:has(.child-audition-page) .footer-follow,
+  #root:has(.child-audition-page) .footer-links {
+    justify-self: center;
+  }
+
+  #root:has(.child-audition-page) .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #root:has(.child-audition-page) .footer-links a {
+    padding: 4px 8px;
+  }
+
+  #root:has(.child-audition-page) .footer-bottom {
+    gap: 6px;
+    padding: 8px 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .audition-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

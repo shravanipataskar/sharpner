@@ -14,12 +14,16 @@ function Header() {
   const isBrandDealsPage = pathname === '/collaborate'
   const isAboutPage = pathname === '/about'
   const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
-  const isBrandedHeaderPage = isBrandDealsPage || isAboutPage || isLegalPage
+  const isAuditionPage = pathname === '/give-audition'
+  const isBrandedHeaderPage =
+    isBrandDealsPage || isAboutPage || isLegalPage || isAuditionPage
 
   if (isBrandedHeaderPage) {
     const headerClass = isLegalPage
       ? 'legal-site-header'
-      : `brand-deals-header${isAboutPage ? ' about-site-header' : ''}`
+      : isAuditionPage
+        ? 'brand-deals-header audition-site-header'
+        : `brand-deals-header${isAboutPage ? ' about-site-header' : ''}`
     const logoClass = isLegalPage ? 'legal-site-logo' : 'brand-deals-logo'
     const menuToggleClass = isLegalPage
       ? 'legal-menu-toggle'
