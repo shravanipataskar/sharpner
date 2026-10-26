@@ -12,10 +12,11 @@ function Header() {
   const { pathname } = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const isBrandDealsPage = pathname === '/collaborate'
+  const isAboutPage = pathname === '/about'
 
-  if (isBrandDealsPage) {
+  if (isBrandDealsPage || isAboutPage) {
     return (
-      <header className="site-header brand-deals-header">
+      <header className={`site-header brand-deals-header${isAboutPage ? ' about-site-header' : ''}`}>
         <Link className="brand-deals-logo" to="/" aria-label="Sharpner home">
           <img src="/assets/images/Logo3.png" alt="Sharpner" />
         </Link>
