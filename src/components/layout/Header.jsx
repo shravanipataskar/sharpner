@@ -12,25 +12,32 @@ function Header() {
   const { pathname } = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const isBrandDealsPage = pathname === '/collaborate'
+  const isAboutPage = pathname === '/about'
   const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
+  const isBrandedHeaderPage = isBrandDealsPage || isAboutPage || isLegalPage
 
-  if (isBrandDealsPage || isLegalPage) {
-    const headerClass = isLegalPage ? 'legal-site-header' : 'brand-deals-header'
+  if (isBrandedHeaderPage) {
+    const headerClass = isLegalPage
+      ? 'legal-site-header'
+      : `brand-deals-header${isAboutPage ? ' about-site-header' : ''}`
+    const logoClass = isLegalPage ? 'legal-site-logo' : 'brand-deals-logo'
+    const menuToggleClass = isLegalPage
+      ? 'legal-menu-toggle'
+      : 'brand-deals-menu-toggle'
+    const navigationId = isLegalPage
+      ? 'legal-navigation'
+      : 'brand-deals-navigation'
 
     return (
       <header className={`site-header ${headerClass}`}>
-        <Link
-          className={isLegalPage ? 'legal-site-logo' : 'brand-deals-logo'}
-          to="/"
-          aria-label="Sharpner home"
-        >
+        <Link className={logoClass} to="/" aria-label="Sharpner home">
           <img src="/assets/images/Logo3.png" alt="Sharpner" />
         </Link>
         <button
-          className={isLegalPage ? 'legal-menu-toggle' : 'brand-deals-menu-toggle'}
+          className={menuToggleClass}
           type="button"
           aria-expanded={menuOpen}
-          aria-controls={isLegalPage ? 'legal-navigation' : 'brand-deals-navigation'}
+          aria-controls={navigationId}
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -40,7 +47,7 @@ function Header() {
         </button>
         <nav
           className={`site-nav${menuOpen ? ' is-open' : ''}`}
-          id={isLegalPage ? 'legal-navigation' : 'brand-deals-navigation'}
+          id={navigationId}
           aria-label="Main navigation"
         >
           <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>

@@ -10,6 +10,8 @@ import JoinCommunityPage from '../pages/public/JoinCommunityPage.jsx'
 import JoinDholPathakPage from '../pages/public/JoinDholPathakPage.jsx'
 import LegalPage from '../pages/public/LegalPage.jsx'
 import SubmitIdeaPage from '../pages/public/SubmitIdeaPage.jsx'
+import ChildSafetyPolicy from '../pages/public/ChildSafetyPolicy';
+import CommunityGuidelines from '../pages/public/CommunityGuidelines';
 
 function AppRouter() {
   return (
@@ -26,6 +28,9 @@ function AppRouter() {
           <Route path="/creative-lab" element={<CreativeLabPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/legal" element={<LegalPage />} />
+          <Route path="/child-safety-policy"element={<ChildSafetyPolicy />}/>
+          <Route path="/community-guidelines" element={<CommunityGuidelines />}/>
+          
           <Route path="/terms-conditions" element={<LegalPage />} />
         </Route>
       </Routes>

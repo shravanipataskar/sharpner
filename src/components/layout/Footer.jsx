@@ -39,6 +39,9 @@ function Footer() {
           {isLaravelStylePage ? (
             <>
               <Link to="/legal">Privacy Policy</Link>
+              <Link to="/legal">Terms &amp; Conditions</Link>
+               <Link to="/child-safety-policy">Child Safety Policy</Link>
+              <Link to="/community-guidelines">Community Guidelines</Link>
               <Link to="/terms-conditions">Terms &amp; Conditions</Link>
               <Link to="/legal">Child Safety Policy</Link>
               <Link to="/legal">Community Guidelines</Link>
@@ -46,6 +49,9 @@ function Footer() {
           ) : (
             <>
               <Link to="/legal">Privacy<br />Policy</Link>
+              <Link to="/legal">Terms &amp;<br />Conditions</Link>
+              <Link to="/child-safety-policy">Child Safety Policy</Link>
+              <Link to="/community-guidelines">Community Guidelines</Link>
               <Link to="/terms-conditions">Terms &amp;<br />Conditions</Link>
               <Link to="/legal">Child Safety<br />Policy</Link>
               <Link to="/legal">Community<br />Guidelines</Link>
