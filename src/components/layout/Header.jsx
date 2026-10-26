@@ -15,9 +15,16 @@ function Header() {
   const isAboutPage = pathname === '/about'
   const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
   const isAuditionPage = pathname === '/give-audition'
+  const isDholPage = pathname === '/join-dhol-pathak'
   const isPolicyPage =
     pathname === '/child-safety-policy' || pathname === '/community-guidelines'
   const isBrandedHeaderPage =
+    isBrandDealsPage ||
+    isAboutPage ||
+    isLegalPage ||
+    isPolicyPage ||
+    isAuditionPage ||
+    isDholPage
     isBrandDealsPage ||
     isAboutPage ||
     isLegalPage ||
@@ -29,6 +36,8 @@ function Header() {
       ? 'legal-site-header'
       : isAuditionPage
         ? 'brand-deals-header audition-site-header'
+        : isDholPage
+          ? 'brand-deals-header dhol-site-header'
         : `brand-deals-header${isAboutPage ? ' about-site-header' : ''}`
     const logoClass = isLegalPage ? 'legal-site-logo' : 'brand-deals-logo'
     const menuToggleClass = isLegalPage
