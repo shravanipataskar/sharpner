@@ -14,7 +14,10 @@ function Header() {
   const isBrandDealsPage = pathname === '/collaborate'
   const isAboutPage = pathname === '/about'
   const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
-  const isBrandedHeaderPage = isBrandDealsPage || isAboutPage || isLegalPage
+  const isPolicyPage =
+    pathname === '/child-safety-policy' || pathname === '/community-guidelines'
+  const isBrandedHeaderPage =
+    isBrandDealsPage || isAboutPage || isLegalPage || isPolicyPage
 
   if (isBrandedHeaderPage) {
     const headerClass = isLegalPage

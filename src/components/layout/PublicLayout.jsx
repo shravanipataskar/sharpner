@@ -12,7 +12,7 @@ function PublicLayout() {
       <main className="site-main">
         <Outlet />
       </main>
-      <Footer />
+      <Footer isHomePage={isHomePage} />
     </>
   )
 }
