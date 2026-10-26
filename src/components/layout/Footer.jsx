@@ -35,7 +35,7 @@ function Footer({ isHomePage }) {
       <div className="footer-bottom">
         <span>© 2026 Aayojan.AI. All Rights Reserved.</span>
         <span>
-          Developed By <a href="https://aayojan.ai/" target="_blank" rel="noopener noreferrer">AayojanAI</a>
+          Developed By <a href="https://www.aayojanai.com/" target="_blank" rel="noopener noreferrer">AayojanAI</a>
         </span>
       </div>
     </footer>
