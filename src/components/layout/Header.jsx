@@ -14,22 +14,25 @@ function Header() {
   const isBrandDealsPage = pathname === '/collaborate'
   const isAboutPage = pathname === '/about'
   const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
-<<<<<<< HEAD
   const isAuditionPage = pathname === '/give-audition'
-  const isBrandedHeaderPage =
-    isBrandDealsPage || isAboutPage || isLegalPage || isAuditionPage
-=======
+  const isDholPage = pathname === '/join-dhol-pathak'
   const isPolicyPage =
     pathname === '/child-safety-policy' || pathname === '/community-guidelines'
   const isBrandedHeaderPage =
-    isBrandDealsPage || isAboutPage || isLegalPage || isPolicyPage
->>>>>>> e36af6a95391888bcd6f9d2bb6ab5f37da822965
+    isBrandDealsPage ||
+    isAboutPage ||
+    isLegalPage ||
+    isPolicyPage ||
+    isAuditionPage ||
+    isDholPage
 
   if (isBrandedHeaderPage) {
     const headerClass = isLegalPage
       ? 'legal-site-header'
       : isAuditionPage
         ? 'brand-deals-header audition-site-header'
+        : isDholPage
+          ? 'brand-deals-header dhol-site-header'
         : `brand-deals-header${isAboutPage ? ' about-site-header' : ''}`
     const logoClass = isLegalPage ? 'legal-site-logo' : 'brand-deals-logo'
     const menuToggleClass = isLegalPage
