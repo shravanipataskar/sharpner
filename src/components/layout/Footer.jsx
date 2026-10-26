@@ -1,23 +1,12 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Footer() {
-  const { pathname } = useLocation()
-  const isBrandDealsPage = pathname === '/collaborate'
-  const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
-  const isLaravelStylePage = isBrandDealsPage || isLegalPage
-
   return (
-    <footer
-      className={`footer-section${isBrandDealsPage ? ' brand-deals-footer' : ''}${isLegalPage ? ' legal-footer' : ''}`}
-    >
+    <footer className="footer-section">
       <div className="footer-main">
         <div className="footer-brand">
           <h4>
-            {isLaravelStylePage ? (
-              <span>Sharpner World</span>
-            ) : (
-              <><strong>Sharpner</strong> <span>World</span></>
-            )}
+            <strong>Sharpner</strong> <span>World</span>
           </h4>
           <p>A Movement Of Little Ones With Big Dreams</p>
         </div>
@@ -36,38 +25,17 @@ function Footer() {
         </div>
 
         <nav className="footer-links" aria-label="Policies">
-          {isLaravelStylePage ? (
-            <>
-              <Link to="/legal">Privacy Policy</Link>
-              <Link to="/legal">Terms &amp; Conditions</Link>
-               <Link to="/child-safety-policy">Child Safety Policy</Link>
-              <Link to="/community-guidelines">Community Guidelines</Link>
-              <Link to="/terms-conditions">Terms &amp; Conditions</Link>
-              <Link to="/legal">Child Safety Policy</Link>
-              <Link to="/legal">Community Guidelines</Link>
-            </>
-          ) : (
-            <>
-              <Link to="/legal">Privacy<br />Policy</Link>
-              <Link to="/legal">Terms &amp;<br />Conditions</Link>
-              <Link to="/child-safety-policy">Child Safety Policy</Link>
-              <Link to="/community-guidelines">Community Guidelines</Link>
-              <Link to="/terms-conditions">Terms &amp;<br />Conditions</Link>
-              <Link to="/legal">Child Safety<br />Policy</Link>
-              <Link to="/legal">Community<br />Guidelines</Link>
-            </>
-          )}
+          <Link to="/legal">Privacy Policy</Link>
+          <Link to="/terms-conditions">Terms &amp; Conditions</Link>
+          <Link to="/child-safety-policy">Child Safety Policy</Link>
+          <Link to="/community-guidelines">Community Guidelines</Link>
         </nav>
       </div>
 
       <div className="footer-bottom">
+        <span>© 2026 Aayojan.AI. All Rights Reserved.</span>
         <span>
-          © 2026 {isLaravelStylePage ? 'AayojanAI' : 'Aayojan.AI'}. All Rights Reserved.
-        </span>
-        <span>
-          Developed By <a href={isLaravelStylePage ? 'https://aayojanai.com' : 'https://aayojan.ai/'}>
-            AayojanAI
-          </a>
+          Developed By <a href="https://aayojan.ai/" target="_blank" rel="noopener noreferrer">AayojanAI</a>
         </span>
       </div>
     </footer>
