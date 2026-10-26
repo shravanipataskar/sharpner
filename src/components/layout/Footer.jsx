@@ -3,13 +3,17 @@ import { Link, useLocation } from 'react-router-dom'
 function Footer() {
   const { pathname } = useLocation()
   const isBrandDealsPage = pathname === '/collaborate'
+  const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
+  const isLaravelStylePage = isBrandDealsPage || isLegalPage
 
   return (
-    <footer className={`footer-section${isBrandDealsPage ? ' brand-deals-footer' : ''}`}>
+    <footer
+      className={`footer-section${isBrandDealsPage ? ' brand-deals-footer' : ''}${isLegalPage ? ' legal-footer' : ''}`}
+    >
       <div className="footer-main">
         <div className="footer-brand">
           <h4>
-            {isBrandDealsPage ? (
+            {isLaravelStylePage ? (
               <span>Sharpner World</span>
             ) : (
               <><strong>Sharpner</strong> <span>World</span></>
@@ -32,17 +36,17 @@ function Footer() {
         </div>
 
         <nav className="footer-links" aria-label="Policies">
-          {isBrandDealsPage ? (
+          {isLaravelStylePage ? (
             <>
               <Link to="/legal">Privacy Policy</Link>
-              <Link to="/legal">Terms &amp; Conditions</Link>
+              <Link to="/terms-conditions">Terms &amp; Conditions</Link>
               <Link to="/legal">Child Safety Policy</Link>
               <Link to="/legal">Community Guidelines</Link>
             </>
           ) : (
             <>
               <Link to="/legal">Privacy<br />Policy</Link>
-              <Link to="/legal">Terms &amp;<br />Conditions</Link>
+              <Link to="/terms-conditions">Terms &amp;<br />Conditions</Link>
               <Link to="/legal">Child Safety<br />Policy</Link>
               <Link to="/legal">Community<br />Guidelines</Link>
             </>
@@ -52,10 +56,10 @@ function Footer() {
 
       <div className="footer-bottom">
         <span>
-          © 2026 {isBrandDealsPage ? 'AayojanAI' : 'Aayojan.AI'}. All Rights Reserved.
+          © 2026 {isLaravelStylePage ? 'AayojanAI' : 'Aayojan.AI'}. All Rights Reserved.
         </span>
         <span>
-          Developed By <a href={isBrandDealsPage ? 'https://aayojanai.com' : 'https://aayojan.ai/'}>
+          Developed By <a href={isLaravelStylePage ? 'https://aayojanai.com' : 'https://aayojan.ai/'}>
             AayojanAI
           </a>
         </span>

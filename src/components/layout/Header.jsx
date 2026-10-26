@@ -12,18 +12,25 @@ function Header() {
   const { pathname } = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const isBrandDealsPage = pathname === '/collaborate'
+  const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
 
-  if (isBrandDealsPage) {
+  if (isBrandDealsPage || isLegalPage) {
+    const headerClass = isLegalPage ? 'legal-site-header' : 'brand-deals-header'
+
     return (
-      <header className="site-header brand-deals-header">
-        <Link className="brand-deals-logo" to="/" aria-label="Sharpner home">
+      <header className={`site-header ${headerClass}`}>
+        <Link
+          className={isLegalPage ? 'legal-site-logo' : 'brand-deals-logo'}
+          to="/"
+          aria-label="Sharpner home"
+        >
           <img src="/assets/images/Logo3.png" alt="Sharpner" />
         </Link>
         <button
-          className="brand-deals-menu-toggle"
+          className={isLegalPage ? 'legal-menu-toggle' : 'brand-deals-menu-toggle'}
           type="button"
           aria-expanded={menuOpen}
-          aria-controls="brand-deals-navigation"
+          aria-controls={isLegalPage ? 'legal-navigation' : 'brand-deals-navigation'}
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -33,12 +40,14 @@ function Header() {
         </button>
         <nav
           className={`site-nav${menuOpen ? ' is-open' : ''}`}
-          id="brand-deals-navigation"
+          id={isLegalPage ? 'legal-navigation' : 'brand-deals-navigation'}
           aria-label="Main navigation"
         >
           <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
           <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
-          <NavLink to="/collaborate" onClick={() => setMenuOpen(false)}>Brand Deals</NavLink>
+          <NavLink to="/collaborate" onClick={() => setMenuOpen(false)}>
+            Brand Deals
+          </NavLink>
         </nav>
       </header>
     )

@@ -1769,6 +1769,83 @@ background-repeat:no-repeat; */
 }
 
 @media (min-width: 992px) {
+    .whatfaq-section{
+        padding:35px 25px 8px;
+    }
+
+    .whatfaq-section > .container{
+        width:calc(100% - 13px);
+        max-width:none;
+        margin-right:0;
+        margin-left:18px;
+        padding-right:0;
+        padding-left:0;
+    }
+
+    .whatfaq-section .row.g-4{
+        display:grid;
+        grid-template-columns:minmax(0, 1.414fr) minmax(0, 1fr);
+        gap:0 20px;
+        margin:0;
+    }
+
+    .whatfaq-section .row.g-4 > .col-lg-7,
+    .whatfaq-section .row.g-4 > .col-lg-5{
+        width:auto;
+        max-width:none;
+        padding:0;
+    }
+
+    .whatfaq-section .what-banner{
+        height:466px;
+    }
+
+    .whatfaq-section .faq-card{
+        height:490px;
+        min-height:490px;
+        padding:24px;
+    }
+
+    .whatfaq-section .faq-right{
+        flex:0 0 135px;
+        min-width:0;
+        align-self:stretch;
+        align-items:flex-start;
+    }
+
+    .whatfaq-section .faq-card .section-header{
+        margin-bottom:37px;
+    }
+
+    .whatfaq-section .faq-card .section-header p{
+        font-size:13px;
+        line-height:1.4;
+    }
+
+    .whatfaq-section .faq-wrapper{
+        gap:16px;
+    }
+
+    .whatfaq-section .faq-left{
+        flex:1 1 0;
+        min-width:0;
+    }
+
+    .whatfaq-section .faq-right img{
+        width:100%;
+        height:210px;
+        max-width:none;
+        max-height:none;
+        margin:42px 0 0;
+        object-fit:cover;
+        object-position:center;
+    }
+
+    .whatfaq-section .faq-question{
+        padding:10px 14px;
+        font-size:14px;
+    }
+
     .faq-card .section-header h2 {
         font-size: 30px;
         white-space: nowrap;

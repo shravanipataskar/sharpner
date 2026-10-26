@@ -22,7 +22,7 @@ function WhatFaqSection() {
         <div className="row g-4">
           <div className="col-lg-7">
             <div className="what-banner">
-              <img src="/assets/images/panel_community.png" alt="" />
+              <img src="/assets/images/what-we-do-bg.png" alt="" />
               <div className="what-overlay">
                 <h2>What We Do</h2>
                 <div className="what-items">
@@ -54,7 +54,7 @@ function WhatFaqSection() {
                   ))}
                 </div>
                 <div className="faq-right">
-                  <img src="/assets/images/ChatGPT Image Jun 11, 2026, 04_38_55 PM.png" alt="" />
+                  <img src="/assets/images/faq-new.png" alt="Young creator with a magnifying glass" />
                 </div>
               </div>
             </div>

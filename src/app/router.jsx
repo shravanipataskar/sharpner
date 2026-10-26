@@ -26,6 +26,7 @@ function AppRouter() {
           <Route path="/creative-lab" element={<CreativeLabPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/legal" element={<LegalPage />} />
+          <Route path="/terms-conditions" element={<LegalPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
