@@ -41,6 +41,7 @@ function ChannelsSection() {
                     className="btn btn-youtube"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Sharpner World on YouTube"
                   >
                     <i className="fab fa-youtube"></i>
                     YouTube
@@ -51,6 +52,7 @@ function ChannelsSection() {
                     className="btn btn-instagram"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Sharpner World on Instagram"
                   >
                     <i className="fab fa-instagram"></i>
                     Instagram
@@ -93,16 +95,18 @@ function ChannelsSection() {
                     className="btn btn-youtube"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Sharpner World on YouTube"
                   >
                     <i className="fab fa-youtube"></i>
                     YouTube
                   </a>
 
                   <a
-                    href="https://www.instagram.com/sharpnerhindi?igsh=eTNyYjVpdnZxM2xi"
+                    href="https://www.instagram.com/sharpnerworld/"
                     className="btn btn-instagram"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Sharpner World on Instagram"
                   >
                     <i className="fab fa-instagram"></i>
                     Instagram

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-function Footer() {
+function Footer({ isHomePage }) {
   return (
-    <footer className="footer-section">
+    <footer className={`footer-section${isHomePage ? ' home-footer' : ''}`}>
       <div className="footer-main">
         <div className="footer-brand">
           <h4>

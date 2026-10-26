@@ -1,18 +1,33 @@
 const faqItems = [
-  'Is there any registration fee?',
-  'Are parents allowed during shoots?',
-  'Is the Creative Lab paid?',
-  'Can selected creators become part of the core team later?',
-  'Is prior experience necessary?',
+  {
+    question: 'Is there any registration fee?',
+    answer: 'No. There is absolutely no registration fee to join SHARPNER or apply for auditions. Everything is completely free.'
+  },
+  {
+    question: 'Are parents allowed during shoots?',
+    answer: 'Yes, parental presence is mandatory during all shoots and auditions. We strictly follow child safety guidelines.'
+  },
+  {
+    question: 'Is the Creative Lab paid?',
+    answer: 'No. The Creative Lab is an experimental and unpaid learning platform designed to help creators grow their skills and build real content experience.'
+  },
+  {
+    question: 'Can selected creators become part of the core team later?',
+    answer: 'Yes, exceptional performers from the Creative Lab may be invited to join our core team for paid projects and long-term collaborations.'
+  },
+  {
+    question: 'Is prior experience necessary?',
+    answer: 'No prior experience is required. We welcome passionate beginners and experienced creators alike. What matters most is your enthusiasm and willingness to learn.'
+  },
 ]
 
 const whatWeDoItems = [
-  { icon: 'fa-solid fa-film', label: <>Kids Acting<br />Content</> },
-  { icon: 'fa-solid fa-book-open', label: <>Storytelling<br />Reels</> },
-  { icon: 'fa-solid fa-flask', label: <>Educational<br />Experiments</> },
-  { icon: 'fa-solid fa-lightbulb', label: <>Creative Lab<br />Training</> },
-  { icon: 'fa-solid fa-users', label: <>Community<br />Collaboration</> },
-  { icon: 'fa-solid fa-microphone-lines', label: <>Offline Shows</> },
+  { icon: 'fa-solid fa-film', label: 'Kids Acting Content' },
+  { icon: 'fa-solid fa-book-open', label: 'Storytelling Reels' },
+  { icon: 'fa-solid fa-flask', label: 'Educational Experiments' },
+  { icon: 'fa-solid fa-lightbulb', label: 'Creative Lab Training' },
+  { icon: 'fa-solid fa-users', label: 'Community Collaboration' },
+  { icon: 'fa-solid fa-microphone-lines', label: 'Offline Shows' },
 ]
 
 function WhatFaqSection() {
@@ -44,11 +59,11 @@ function WhatFaqSection() {
               </div>
               <div className="faq-wrapper">
                 <div className="faq-left">
-                  {faqItems.map((question) => (
-                    <details className="faq-item" key={question}>
-                      <summary className="faq-question">{question}</summary>
+                  {faqItems.map((item) => (
+                    <details className="faq-item" key={item.question}>
+                      <summary className="faq-question">{item.question}</summary>
                       <div className="faq-answer">
-                        <p>Get in touch with our team and we’ll be happy to help.</p>
+                        <p>{item.answer}</p>
                       </div>
                     </details>
                   ))}

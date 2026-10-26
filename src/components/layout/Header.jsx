@@ -14,9 +14,16 @@ function Header() {
   const isBrandDealsPage = pathname === '/collaborate'
   const isAboutPage = pathname === '/about'
   const isLegalPage = pathname === '/legal' || pathname === '/terms-conditions'
+<<<<<<< HEAD
   const isAuditionPage = pathname === '/give-audition'
   const isBrandedHeaderPage =
     isBrandDealsPage || isAboutPage || isLegalPage || isAuditionPage
+=======
+  const isPolicyPage =
+    pathname === '/child-safety-policy' || pathname === '/community-guidelines'
+  const isBrandedHeaderPage =
+    isBrandDealsPage || isAboutPage || isLegalPage || isPolicyPage
+>>>>>>> e36af6a95391888bcd6f9d2bb6ab5f37da822965
 
   if (isBrandedHeaderPage) {
     const headerClass = isLegalPage
