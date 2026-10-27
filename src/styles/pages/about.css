@@ -65,7 +65,7 @@
   white-space: nowrap;
 }
 .about-site-header .site-nav a:hover,
-.about-site-header .site-nav a.active { color: var(--about-gold); background: transparent; }
+.about-site-header .site-nav a.active { color: var(--about-gold); background: rgb(255 215 0 / 10%); }
 
 /* 1 — Hero */
 .about-hero {
