@@ -45,7 +45,7 @@
   padding: 0 10px 12px;
   border-bottom: 1px solid rgba(255, 213, 0, 0.24);
   color: var(--audition-yellow);
-  font-size: 17px;
+  font-size: 21.25px;
   font-weight: 800;
   line-height: 1.6;
   text-align: center;
@@ -69,7 +69,7 @@
   max-width: 800px;
   margin: 17px auto 0;
   color: #c5c5c5;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.8;
   text-align: center;
@@ -113,7 +113,7 @@
 .audition-steps-card h2 {
   margin: 0 0 22px;
   color: var(--audition-yellow);
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 800;
   line-height: 1.4;
   text-align: center;
@@ -155,7 +155,7 @@
   border-radius: 50%;
   color: #b49a00;
   background: transparent;
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 800;
 }
 
@@ -167,7 +167,7 @@
 }
 
 .audition-step-label {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.5;
 }
@@ -190,7 +190,7 @@
   border-radius: 5px 5px 0 0;
   color: var(--audition-yellow);
   background: rgba(255, 213, 0, 0.055);
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 800;
   line-height: 1.7;
 }
@@ -213,7 +213,7 @@
 .audition-field legend {
   margin-bottom: 10px;
   color: var(--audition-yellow);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.6;
 }
@@ -248,7 +248,7 @@
   background: var(--audition-input);
   box-shadow: 0 5px 12px rgba(255, 213, 0, 0.04);
   font-family: inherit;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -315,7 +315,7 @@
   gap: 8px;
   color: var(--audition-yellow);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.6;
 }
@@ -338,14 +338,14 @@
   border-radius: 13px;
   color: #ededed;
   background: #222;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
 .audition-help-text {
   margin: -7px 0 0;
   color: #a5a5a5;
-  font-size: 11px;
+  font-size: 13.75px;
   line-height: 1.8;
 }
 
@@ -355,7 +355,7 @@
   display: block;
   margin-top: 7px;
   color: #ff8c83;
-  font-size: 11px;
+  font-size: 13.75px;
   line-height: 1.5;
 }
 
@@ -366,7 +366,7 @@
   border-radius: 9px;
   color: #ffb5ae;
   background: rgba(180, 30, 20, 0.1);
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /* Consent */
@@ -383,7 +383,7 @@
   gap: 10px;
   color: var(--audition-yellow);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.7;
 }
@@ -434,7 +434,7 @@
   border-radius: 9px;
   cursor: pointer;
   font-family: inherit;
-  font-size: 11px;
+  font-size: 13.75px;
   font-weight: 800;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -487,20 +487,20 @@
 
 .audition-success-icon {
   margin-bottom: 30px;
-  font-size: 52px;
+  font-size: 65px;
 }
 
 .audition-success-modal h2 {
   margin: 0 0 12px;
   color: var(--audition-yellow);
-  font-size: 26px;
+  font-size: 32.5px;
   font-weight: 800;
 }
 
 .audition-success-modal p {
   margin: 0 auto 30px;
   color: #bdbdbd;
-  font-size: 13px;
+  font-size: 16.25px;
   line-height: 1.8;
 }
 
@@ -513,7 +513,7 @@
   background: #2864e8;
   cursor: pointer;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 700;
 }
 
@@ -541,7 +541,7 @@
 
   .audition-intro p,
   .audition-registration-heading p {
-    font-size: 14px;
+    font-size: 17.5px;
   }
 
   .audition-divider {
@@ -563,7 +563,7 @@
 
   .audition-steps-card h2 {
     margin-bottom: 18px;
-    font-size: 19px;
+    font-size: 23.75px;
   }
 
   .audition-steps-list {
@@ -583,7 +583,7 @@
   }
 
   .audition-step-label {
-    font-size: 11px;
+    font-size: 13.75px;
   }
 
   .audition-form-card {
@@ -603,7 +603,7 @@
 
   .audition-section-title {
     padding: 12px;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .audition-navigation {
@@ -615,7 +615,7 @@
   }
 
   .audition-success-modal h2 {
-    font-size: 22px;
+    font-size: 27.5px;
   }
 }
 
@@ -638,7 +638,7 @@
   padding: 0 10px 3px;
   border-bottom: 1px solid rgba(255, 213, 0, 0.2);
   color: var(--audition-yellow);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1;
   text-align: center;
@@ -662,7 +662,7 @@
   max-width: 700px;
   margin: 11px auto 0;
   color: #c5c5c5;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.35;
 }
 
@@ -697,7 +697,7 @@
 .audition-steps h2 {
   margin: 0 0 12px;
   color: var(--audition-yellow);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   text-align: center;
   white-space: nowrap;
@@ -719,11 +719,11 @@
   width: 22px;
   height: 22px;
   border-width: 1px;
-  font-size: 10px;
+  font-size: 12.5px;
 }
 
 .audition-step-label {
-  font-size: 9px;
+  font-size: 11.25px;
   font-weight: 500;
 }
 
@@ -742,7 +742,7 @@
   border-bottom: 1px solid var(--audition-yellow);
   color: var(--audition-yellow);
   background: rgba(255, 213, 0, 0.055);
-  font-size: 9px;
+  font-size: 11.25px;
   font-weight: 800;
   line-height: 1.6;
 }
@@ -763,7 +763,7 @@
 .audition-choice-title {
   margin: 0;
   color: var(--audition-yellow);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
   line-height: 1.5;
 }
@@ -775,7 +775,7 @@
   padding: 6px 9px;
   border-width: 1px;
   border-radius: 8px;
-  font-size: 9px;
+  font-size: 11.25px;
 }
 
 .audition-field textarea {
@@ -804,7 +804,7 @@
   align-items: flex-start;
   gap: 5px;
   color: #d9d9d9;
-  font-size: 9px;
+  font-size: 11.25px;
   line-height: 1.5;
 }
 
@@ -829,7 +829,7 @@
   border-radius: 8px;
   color: #ddd;
   background: #222;
-  font-size: 10px;
+  font-size: 12.5px;
   line-height: 1.6;
 }
 
@@ -849,7 +849,7 @@
   align-items: flex-start;
   gap: 8px;
   color: #ddd;
-  font-size: 10px;
+  font-size: 12.5px;
   line-height: 1.5;
 }
 
@@ -880,7 +880,7 @@
   min-height: 18px;
   padding: 2px 10px;
   border-radius: 20px;
-  font-size: 9px;
+  font-size: 11.25px;
 }
 
 .audition-submit-error {
@@ -902,7 +902,7 @@
 
 .brand-deals-header.audition-site-header .site-nav a {
   padding: 6px;
-  font-size: 9px;
+  font-size: 11.25px;
 }
 
 #root:has(.child-audition-page) .footer-main {
@@ -912,11 +912,11 @@
 }
 
 #root:has(.child-audition-page) .footer-brand h4 {
-  font-size: 18px;
+  font-size: 22.5px;
 }
 
 #root:has(.child-audition-page) .footer-brand p {
-  font-size: 9px;
+  font-size: 11.25px;
 }
 
 #root:has(.child-audition-page) .footer-follow {
@@ -927,18 +927,18 @@
 #root:has(.child-audition-page) .footer-follow span,
 #root:has(.child-audition-page) .footer-links a,
 #root:has(.child-audition-page) .footer-bottom {
-  font-size: 8px;
+  font-size: 10px;
 }
 
 #root:has(.child-audition-page) .footer-follow a {
   width: 20px;
   height: 20px;
-  font-size: 10px;
+  font-size: 12.5px;
 }
 
 #root:has(.child-audition-page) .footer-links a {
   padding: 0 5px;
-  font-size: 7px;
+  font-size: 8.75px;
   line-height: 1.4;
 }
 

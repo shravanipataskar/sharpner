@@ -29,7 +29,7 @@
   padding: 0 12px 10px;
   border-bottom: 1px solid rgb(255 212 0 / 24%);
   color: var(--dhol-yellow);
-  font-size: 17px;
+  font-size: 21.25px;
   font-weight: 800;
   line-height: 1.5;
 }
@@ -50,7 +50,7 @@
   max-width: 750px;
   margin: 16px auto 0;
   color: #c5c5c5;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.7;
 }
 
@@ -76,7 +76,7 @@
 .dhol-steps-card h2 {
   margin: 0 0 22px;
   color: var(--dhol-yellow);
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 800;
   line-height: 1.3;
 }
@@ -101,7 +101,7 @@
   background: transparent;
   cursor: default;
   font: inherit;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   text-align: left;
 }
@@ -129,7 +129,7 @@
   border: 2px solid #806c00;
   border-radius: 50%;
   color: #a48b00;
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 800;
 }
 
@@ -152,7 +152,7 @@
   border-radius: 5px 5px 0 0;
   color: var(--dhol-yellow);
   background: rgb(255 212 0 / 6%);
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 800;
   line-height: 1.6;
 }
@@ -180,7 +180,7 @@
 .dhol-choice-group legend {
   padding: 0;
   color: var(--dhol-yellow);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.6;
 }
@@ -206,7 +206,7 @@
   background: #242424;
   box-shadow: 0 5px 12px rgb(255 212 0 / 5%);
   font: inherit;
-  font-size: 12px;
+  font-size: 15px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -244,7 +244,7 @@
   gap: 8px;
   color: var(--dhol-yellow);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.6;
 }
@@ -272,7 +272,7 @@
 .dhol-error {
   display: block;
   color: #ff9188;
-  font-size: 11px;
+  font-size: 13.75px;
   line-height: 1.5;
 }
 
@@ -289,7 +289,7 @@
   gap: 10px;
   color: var(--dhol-yellow);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.6;
 }
@@ -334,7 +334,7 @@
   border-radius: 22px;
   cursor: pointer;
   font: inherit;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -381,13 +381,13 @@
 
 .dhol-success-icon {
   margin-bottom: 25px;
-  font-size: 52px;
+  font-size: 65px;
 }
 
 .dhol-success-modal h2 {
   margin: 0 0 12px;
   color: var(--dhol-yellow);
-  font-size: 27px;
+  font-size: 33.75px;
   font-weight: 800;
 }
 
@@ -395,7 +395,7 @@
   max-width: 400px;
   margin: 0 auto 30px;
   color: #bdbdbd;
-  font-size: 14px;
+  font-size: 17.5px;
   line-height: 1.8;
 }
 
@@ -421,7 +421,7 @@
 }
 
 .dhol-site-header .site-nav a {
-  font-size: 13px;
+  font-size: 16.25px;
 }
 
 @media (max-width: 991px) {
@@ -435,12 +435,12 @@
   }
 
   .dhol-steps-card h2 {
-    font-size: 17px;
+    font-size: 21.25px;
   }
 
   .dhol-step {
     gap: 9px;
-    font-size: 11px;
+    font-size: 13.75px;
   }
 
   .dhol-step-number {
@@ -499,7 +499,7 @@
   }
 
   .dhol-page-intro p {
-    font-size: 14px;
+    font-size: 17.5px;
   }
 
   .dhol-layout {
@@ -513,7 +513,7 @@
 
   .dhol-steps-card h2 {
     margin-bottom: 14px;
-    font-size: 17px;
+    font-size: 21.25px;
   }
 
   .dhol-steps-list {
@@ -524,7 +524,7 @@
 
   .dhol-step {
     gap: 8px;
-    font-size: 10px;
+    font-size: 12.5px;
   }
 
   .dhol-form-card {
@@ -570,6 +570,6 @@
   }
 
   .dhol-success-modal h2 {
-    font-size: 23px;
+    font-size: 28.75px;
   }
 }

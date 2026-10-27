@@ -47,7 +47,7 @@
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(255, 213, 0, 0.25);
   color: var(--creative-yellow);
-  font-size: 21px;
+  font-size: 26.25px;
   font-weight: 800;
   line-height: 1.5;
 }
@@ -69,7 +69,7 @@
   max-width: 760px;
   margin: 0 auto;
   color: #c3c3c3;
-  font-size: 18px;
+  font-size: 22.5px;
   font-weight: 400;
   line-height: 1.8;
 }
@@ -103,7 +103,7 @@
 .creative-steps-card h2 {
   margin: 0 0 24px;
   color: var(--creative-yellow);
-  font-size: 23px;
+  font-size: 28.75px;
   font-weight: 800;
   line-height: 1.4;
   text-align: center;
@@ -121,7 +121,7 @@
   gap: 18px;
   min-height: 40px;
   color: #a7a39a;
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 700;
 }
 
@@ -135,7 +135,7 @@
   border: 2px solid #927800;
   border-radius: 50%;
   color: #bba000;
-  font-size: 14px;
+  font-size: 17.5px;
   font-weight: 800;
   background: transparent;
 }
@@ -187,7 +187,7 @@
 .creative-form-title h2 {
   margin: 0;
   color: var(--creative-yellow);
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 800;
   line-height: 1.4;
   text-align: center;
@@ -209,7 +209,7 @@
 .creative-field > label {
   margin-bottom: 12px;
   color: var(--creative-yellow);
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -242,7 +242,7 @@
   color: #fff;
   background: #242424;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 17.5px;
   font-weight: 600;
   line-height: 1.6;
   transition:
@@ -271,7 +271,7 @@
   display: block;
   margin-top: 8px;
   color: #ff8b82;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
@@ -282,7 +282,7 @@
   border-radius: 8px;
   color: #ffaaa4;
   background: rgba(255, 80, 70, 0.08);
-  font-size: 13px;
+  font-size: 16.25px;
   line-height: 1.5;
 }
 
@@ -318,7 +318,7 @@
   color: #fff;
   background: transparent;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 17.5px;
   font-weight: 700;
   transition:
     border-color 0.2s ease,
@@ -362,7 +362,7 @@
   border-radius: 10px;
   cursor: pointer;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 16.25px;
   font-weight: 800;
   line-height: 1.3;
   transition:
@@ -465,14 +465,14 @@
 
 .idea-success-icon {
   margin-bottom: 35px;
-  font-size: 53px;
+  font-size: 66.25px;
   line-height: 1;
 }
 
 .idea-success-modal h2 {
   margin: 0 0 8px;
   color: var(--creative-yellow);
-  font-size: 28px;
+  font-size: 35px;
   font-weight: 800;
   line-height: 1.4;
 }
@@ -481,7 +481,7 @@
   max-width: 390px;
   margin: 0 auto 32px;
   color: #bdbdbd;
-  font-size: 14px;
+  font-size: 17.5px;
   font-weight: 400;
   line-height: 1.7;
 }
@@ -496,7 +496,7 @@
   background: #2864e8;
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 17.5px;
   font-weight: 700;
   transition: background 0.2s ease;
 }
@@ -559,7 +559,7 @@
   }
 
   .creative-steps-card h2 {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
@@ -578,11 +578,11 @@
   }
 
   .creative-submission-heading h1 {
-    font-size: 19px;
+    font-size: 23.75px;
   }
 
   .creative-submission-heading p {
-    font-size: 15px;
+    font-size: 18.75px;
     line-height: 1.7;
   }
 
@@ -614,7 +614,7 @@
   }
 
   .creative-form-title h2 {
-    font-size: 18px;
+    font-size: 22.5px;
   }
 
   .creative-form-fields {
@@ -639,7 +639,7 @@
   .creative-next-button,
   .creative-submit-button {
     padding: 11px 13px;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .idea-modal-overlay {
@@ -653,14 +653,14 @@
 
   .idea-success-icon {
     margin-bottom: 30px;
-    font-size: 48px;
+    font-size: 60px;
   }
 
   .idea-success-modal h2 {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .idea-success-modal p {
-    font-size: 13px;
+    font-size: 16.25px;
   }
 }

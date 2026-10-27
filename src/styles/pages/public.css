@@ -162,7 +162,7 @@
   padding: 8px 12px;
   border-radius: 8px;
   color: #f2f2f2;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease, background-color 0.2s ease;
@@ -199,7 +199,7 @@
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(255 215 0 / 25%);
   color: #ffd700;
-  font-size: 18px;
+  font-size: 22.5px;
   font-weight: 800;
   letter-spacing: -0.5px;
   line-height: 1.25;
@@ -307,7 +307,7 @@
   border-bottom: 1px solid rgb(255 215 0 / 40%);
   background: rgb(255 215 0 / 10%);
   color: #ffd700;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -357,7 +357,7 @@
   background: #2d2d2d;
   color: #e8e8e8;
   font: inherit;
-  font-size: 14px;
+  font-size: 17.5px;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -569,7 +569,7 @@
     flex-basis: 30px;
     width: 30px;
     height: 30px;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .brand-step-title {
@@ -581,7 +581,7 @@
     max-width: 46px;
     overflow: hidden;
     color: #ffd700;
-    font-size: 9px;
+    font-size: 11.25px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -626,7 +626,7 @@
 
   .brand-form-card h2 {
     padding: 13px 16px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
 }
@@ -651,13 +651,13 @@
   .brand-form-field select,
   .brand-form-field textarea {
     padding: 10px 12px;
-    font-size: 14px;
+    font-size: 17.5px;
   }
 
   .brand-form-actions button {
     min-width: 100px;
     padding: 10px 18px;
-    font-size: 14px;
+    font-size: 17.5px;
   }
 }
 
@@ -693,7 +693,7 @@
 .legal-site-header .site-nav a {
   padding: 8px 4px;
   color: #f2f2f2;
-  font-size: 14px;
+  font-size: 17.5px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -705,6 +705,16 @@
 
 .legal-menu-toggle {
   display: none;
+}
+
+html:has(.legal-page),
+body:has(.legal-page),
+#root:has(.legal-page) {
+  background: #1a1a1a;
+}
+
+#root:has(.legal-page) {
+  min-height: 125vh;
 }
 
 .legal-page {
@@ -737,13 +747,13 @@
   gap: 15px;
   margin: 0 0 35px;
   color: #ffd700;
-  font-size: 35px;
+  font-size: 43.75px;
   font-weight: 800;
   line-height: 1.3;
 }
 
 .legal-policy-card h1 span {
-  font-size: 29px;
+  font-size: 36.25px;
 }
 
 .legal-policy-card ul {
@@ -758,7 +768,7 @@
   position: relative;
   padding-left: 0;
   color: #f2f2f2;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -784,7 +794,7 @@
 }
 
 .legal-footer .footer-brand h4 {
-  font-size: 25px;
+  font-size: 31.25px;
   font-weight: 600;
 }
 
@@ -794,7 +804,7 @@
 
 .legal-footer .footer-brand p {
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 16.25px;
 }
 
 .legal-footer .footer-follow {
@@ -803,7 +813,7 @@
 }
 
 .legal-footer .footer-follow span {
-  font-size: 13px;
+  font-size: 16.25px;
 }
 
 .legal-footer .footer-follow a {
@@ -813,12 +823,12 @@
 
 .legal-footer .footer-links a {
   padding-inline: 13px;
-  font-size: 13px;
+  font-size: 16.25px;
 }
 
 .legal-footer .footer-bottom {
   padding: 9px 38px;
-  font-size: 11px;
+  font-size: 13.75px;
 }
 
 @media (max-width: 767px) {
@@ -872,7 +882,7 @@
 
   .legal-site-header .site-nav a {
     padding: 8px;
-    font-size: 13px;
+    font-size: 16.25px;
   }
 
   .legal-page {
@@ -888,7 +898,7 @@
   .legal-policy-card h1 {
     gap: 9px;
     margin-bottom: 24px;
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .legal-policy-card ul {
