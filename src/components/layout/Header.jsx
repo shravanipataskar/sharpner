@@ -68,9 +68,9 @@ function Header() {
         >
           <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
           <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
-          <NavLink to="/collaborate" onClick={() => setMenuOpen(false)}>
+          <Link to="/collaborate" onClick={() => setMenuOpen(false)}>
             Brand Deals
-          </NavLink>
+          </Link>
         </nav>
       </header>
     )

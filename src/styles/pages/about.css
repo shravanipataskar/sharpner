@@ -50,7 +50,7 @@
   padding: 0 max(60px, calc((100% - 1260px) / 2)) 0 max(42px, calc((100% - 1284px) / 2));
   position: relative;
   z-index: 5;
-  border-bottom: 3px solid var(--about-gold);
+  border-bottom: 3px solid #ffd400;
   background: #1a1a1a;
   box-shadow: 0 5px 24px #0006;
 }
@@ -65,6 +65,13 @@
   white-space: nowrap;
 }
 .about-site-header .site-nav a:hover,
+.about-site-header .site-nav a:focus-visible,
+.about-site-header .site-nav a:active {
+  color: #ffd700;
+  background: rgb(255 215 0 / 10%);
+  border-radius: 8px;
+}
+.about-site-header .site-nav a.active { color: var(--about-gold); background: transparent; }
 .about-site-header .site-nav a.active { color: var(--about-gold); background: rgb(255 215 0 / 10%); }
 
 /* 1 — Hero */
