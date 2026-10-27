@@ -147,8 +147,7 @@ html:has(.sharpner-dashboard) {
 }
 
 .dashboard-signout:hover {
-  background: #bd2035;
-  transform: translateY(-1px);
+  background: #d92e43;
 }
 
 .dashboard-signout span {
@@ -351,8 +350,86 @@ html:has(.sharpner-dashboard) {
 }
 
 .dashboard-action:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.sharpner-dashboard .talent-show-button,
+.sharpner-dashboard .dashboard-action,
+.sharpner-dashboard .dashboard-signout,
+.sharpner-dashboard .tickets-create-add-item,
+.sharpner-dashboard a[class$="-back"] {
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.sharpner-dashboard .talent-show-button:hover,
+.sharpner-dashboard .dashboard-action:hover,
+.sharpner-dashboard .dashboard-signout:hover,
+.sharpner-dashboard .tickets-create-add-item:hover,
+.sharpner-dashboard a[class$="-back"]:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.sharpner-dashboard .talent-show-button-active:hover,
+.sharpner-dashboard .talent-show-button-inactive:hover {
+  box-shadow:
+    0 0 22px rgba(255, 214, 0, 0.65),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.sharpner-dashboard
+  :is(
+    .creative-ideas-toolbar,
+    .talent-show-toolbar,
+    .collaborations-toolbar,
+    .tickets-toolbar,
+    .users-toolbar
+  )
+  .talent-show-button-add:hover {
+  background-color: #e78300;
+  box-shadow:
+    0 0 22px rgba(255, 190, 0, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+  text-decoration-color: #ffd600;
+  text-underline-offset: 2px;
+}
+
+.sharpner-dashboard .talent-show-button-excel:hover:not(:disabled) {
+  box-shadow:
+    0 0 22px rgba(255, 190, 0, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+  text-decoration-color: #ffd600;
+  text-underline-offset: 2px;
+}
+
+.sharpner-dashboard .talent-show-button-pdf:hover:not(:disabled) {
+  box-shadow:
+    0 0 22px rgba(223, 37, 40, 0.62),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+  text-decoration-color: #ffd600;
+  text-underline-offset: 2px;
+}
+
+.sharpner-dashboard .talent-show-button:focus,
+.sharpner-dashboard .talent-show-button:active,
+.sharpner-dashboard .dashboard-action:focus,
+.sharpner-dashboard .dashboard-action:active,
+.sharpner-dashboard .dashboard-signout:focus,
+.sharpner-dashboard .dashboard-signout:active,
+.sharpner-dashboard .tickets-create-add-item:focus,
+.sharpner-dashboard .tickets-create-add-item:active,
+.sharpner-dashboard a[class$="-back"]:focus,
+.sharpner-dashboard a[class$="-back"]:active {
+  text-decoration: none;
 }
 
 .dashboard-action-blue {

@@ -59,7 +59,13 @@ function AdminLayout({ children, pageClass = '' }) {
             <NavLink
               key={item.label}
               to={item.path}
-              end
+              end={
+                item.path !== '/admin/talent-show' &&
+                item.path !== '/admin/ideas' &&
+                item.path !== '/admin/collaborations' &&
+                item.path !== '/admin/tickets' &&
+                item.path !== '/admin/users'
+              }
               onClick={() => setSidebarOpen(false)}
               className={({ isActive }) =>
                 `dashboard-nav-link${isActive ? ' dashboard-nav-active' : ''}`

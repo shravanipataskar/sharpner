@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import AdminLayout from '../../components/layout/AdminLayout.jsx'
 import '../../styles/pages/TalentShow.css'
 import '../../styles/pages/UsersAdmin.css'
 
 function UsersAdmin() {
+  const { pathname } = useLocation()
+  const statusFilter = pathname.endsWith('/inactive') ? 'inactive' : 'active'
   const [users] = useState([])
-  const [statusFilter, setStatusFilter] = useState('active')
   const [searchText, setSearchText] = useState('')
   const [search, setSearch] = useState('')
 
@@ -31,34 +33,35 @@ function UsersAdmin() {
   function resetSearch() {
     setSearchText('')
     setSearch('')
-    setStatusFilter('active')
   }
 
   return (
-    <AdminLayout pageClass="users-admin">
+    <AdminLayout
+      pageClass={`users-admin${statusFilter === 'inactive' ? ' is-inactive' : ''}`}
+    >
       <main className="dashboard-main users-main">
         <header className="users-header">
           <h1>
-            <span aria-hidden="true">👥</span>
-            Manage Users
+            <span aria-hidden="true">
+              {statusFilter === 'inactive' ? '⏸️' : '👥'}
+            </span>
+            {statusFilter === 'inactive' ? 'Inactive Users' : 'Manage Users'}
           </h1>
           <div className="users-toolbar" aria-label="User actions">
-            <button
-              type="button"
+            <Link
               className={`talent-show-button talent-show-button-active${statusFilter === 'active' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('active')}
-              aria-pressed={statusFilter === 'active'}
+              to="/admin/users"
+              aria-current={statusFilter === 'active' ? 'page' : undefined}
             >
               ✅ Active
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
               className={`talent-show-button talent-show-button-inactive${statusFilter === 'inactive' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('inactive')}
-              aria-pressed={statusFilter === 'inactive'}
+              to="/admin/users/inactive"
+              aria-current={statusFilter === 'inactive' ? 'page' : undefined}
             >
               ⏸ Inactive
-            </button>
+            </Link>
             <button
               type="button"
               className="talent-show-button talent-show-button-add"
@@ -71,7 +74,7 @@ function UsersAdmin() {
         </header>
 
         <section className="talent-show-card users-card" aria-label="Users">
-          <form
+          {statusFilter === 'active' && <form
             className="talent-show-search users-search"
             onSubmit={submitSearch}
             role="search"
@@ -99,7 +102,7 @@ function UsersAdmin() {
             >
               ✕ Reset
             </button>
-          </form>
+          </form>}
 
           <div className="talent-show-table-scroll users-table-scroll">
             <table className="talent-show-table users-table">

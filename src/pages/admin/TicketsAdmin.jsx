@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import AdminLayout from '../../components/layout/AdminLayout.jsx'
 import '../../styles/pages/TalentShow.css'
 import '../../styles/pages/TicketsAdmin.css'
 
 function TicketsAdmin() {
+  const { pathname } = useLocation()
+  const statusFilter = pathname.endsWith('/inactive') ? 'inactive' : 'active'
   const [tickets] = useState([])
-  const [statusFilter, setStatusFilter] = useState('active')
   const [searchText, setSearchText] = useState('')
   const [search, setSearch] = useState('')
   const [moduleFilter, setModuleFilter] = useState('')
@@ -44,42 +46,41 @@ function TicketsAdmin() {
     setSearch('')
     setModuleFilter('')
     setOverallStatusFilter('')
-    setStatusFilter('active')
   }
 
   return (
-    <AdminLayout pageClass="tickets-admin">
+    <AdminLayout
+      pageClass={`tickets-admin${statusFilter === 'inactive' ? ' is-inactive' : ''}`}
+    >
       <main className="dashboard-main tickets-main">
         <header className="tickets-header">
           <h1>
-            <span aria-hidden="true">🎫</span>
-            Manage Tickets
+            <span aria-hidden="true">
+              🎟️
+            </span>
+            {statusFilter === 'inactive' ? 'Inactive Tickets' : 'Manage Tickets'}
           </h1>
           <div className="tickets-toolbar" aria-label="Ticket actions">
-            <button
-              type="button"
+            <Link
               className={`talent-show-button talent-show-button-active${statusFilter === 'active' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('active')}
-              aria-pressed={statusFilter === 'active'}
+              to="/admin/tickets"
+              aria-current={statusFilter === 'active' ? 'page' : undefined}
             >
               ✅ Active
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
               className={`talent-show-button talent-show-button-inactive${statusFilter === 'inactive' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('inactive')}
-              aria-pressed={statusFilter === 'inactive'}
+              to="/admin/tickets/inactive"
+              aria-current={statusFilter === 'inactive' ? 'page' : undefined}
             >
               ⏸ Inactive
-            </button>
-            <button
-              type="button"
+            </Link>
+            {statusFilter === 'active' && <Link
               className="talent-show-button talent-show-button-add"
-              disabled
-              title="Ticket creation is not connected to a backend workflow."
+              to="/admin/tickets/create"
             >
               ➕ Raise Ticket
-            </button>
+            </Link>}
           </div>
         </header>
 
@@ -95,7 +96,7 @@ function TicketsAdmin() {
             <input
               id="tickets-search"
               type="search"
-              placeholder="Search by ticket no, subject..."
+              placeholder="Search by ticket no, subject, module..."
               value={searchText}
               onChange={(event) => setSearchText(event.target.value)}
             />

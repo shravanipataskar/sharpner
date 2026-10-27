@@ -1,12 +1,15 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import AdminLayout from '../../components/layout/AdminLayout.jsx'
+import { downloadCsv } from '../../utils/downloadCsv.js'
+import { downloadPdf } from '../../utils/downloadPdf.js'
 import '../../styles/pages/TalentShow.css'
 import '../../styles/pages/CollaborationsAdmin.css'
 
 function CollaborationsAdmin() {
+  const { pathname } = useLocation()
+  const statusFilter = pathname.endsWith('/inactive') ? 'inactive' : 'active'
   const [collaborations] = useState([])
-  const [statusFilter, setStatusFilter] = useState('active')
   const [searchText, setSearchText] = useState('')
   const [search, setSearch] = useState('')
 
@@ -32,56 +35,82 @@ function CollaborationsAdmin() {
   function resetSearch() {
     setSearchText('')
     setSearch('')
-    setStatusFilter('active')
+  }
+
+  function exportCollaborations() {
+    downloadCsv(
+      'brand-deals.csv',
+      ['Brand Name', 'Contact Person', 'Email', 'Review Status'],
+      visibleCollaborations.map((collaboration) => [
+        collaboration.brandName,
+        collaboration.contactPerson,
+        collaboration.email,
+        collaboration.reviewStatus,
+      ]),
+    )
+  }
+
+  function exportCollaborationsPdf() {
+    downloadPdf(
+      'brand-deals.pdf',
+      'Brand Deals',
+      ['Brand Name', 'Contact Person', 'Email', 'Review Status'],
+      visibleCollaborations.map((collaboration) => [
+        collaboration.brandName,
+        collaboration.contactPerson,
+        collaboration.email,
+        collaboration.reviewStatus,
+      ]),
+    )
   }
 
   return (
-    <AdminLayout pageClass="collaborations-admin">
+    <AdminLayout
+      pageClass={`collaborations-admin${statusFilter === 'inactive' ? ' is-inactive' : ''}`}
+    >
       <main className="dashboard-main collaborations-main">
         <header className="collaborations-header">
           <h1>
-            <span aria-hidden="true">🤝</span>
-            Manage Brand Deals
+            <span aria-hidden="true">{statusFilter === 'inactive' ? '⏸️' : '🤝'}</span>
+            {statusFilter === 'inactive'
+              ? 'Inactive Brand Deals'
+              : 'Manage Brand Deals'}
           </h1>
           <div className="collaborations-toolbar" aria-label="Brand deal actions">
-            <button
-              type="button"
+            <Link
               className={`talent-show-button talent-show-button-active${statusFilter === 'active' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('active')}
-              aria-pressed={statusFilter === 'active'}
+              to="/admin/collaborations"
+              aria-current={statusFilter === 'active' ? 'page' : undefined}
             >
               ✅ Active
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
               className={`talent-show-button talent-show-button-inactive${statusFilter === 'inactive' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('inactive')}
-              aria-pressed={statusFilter === 'inactive'}
+              to="/admin/collaborations/inactive"
+              aria-current={statusFilter === 'inactive' ? 'page' : undefined}
             >
               ⏸ Inactive
-            </button>
-            <Link
+            </Link>
+            {statusFilter === 'active' && <Link
               className="talent-show-button talent-show-button-add"
-              to="/collaborate"
+              to="/admin/collaborations/create"
             >
               ➕ Add New
-            </Link>
-            <button
+            </Link>}
+            {statusFilter === 'active' && <button
               type="button"
               className="talent-show-button talent-show-button-excel"
-              disabled
-              title="Export is unavailable until a backend export operation is connected."
+              onClick={exportCollaborations}
             >
               📊 Export Excel
-            </button>
-            <button
+            </button>}
+            {statusFilter === 'active' && <button
               type="button"
               className="talent-show-button talent-show-button-pdf"
-              disabled
-              title="Export is unavailable until a backend export operation is connected."
+              onClick={exportCollaborationsPdf}
             >
               📄 Export PDF
-            </button>
+            </button>}
           </div>
         </header>
 

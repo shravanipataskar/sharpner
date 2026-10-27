@@ -50,6 +50,62 @@
   gap: 8px;
 }
 
+.talent-show-toolbar a {
+  text-decoration: none;
+}
+
+.talent-show-admin.is-inactive
+  .talent-show-toolbar
+  .talent-show-button-active:not(.is-selected) {
+  background: #46576e;
+}
+
+.talent-show-admin.is-inactive
+  .talent-show-toolbar
+  .talent-show-button-inactive.is-selected {
+  background: #2864e8;
+}
+
+.talent-show-admin.is-inactive .talent-show-card {
+  min-height: 0;
+  padding: 45px 44px 60px;
+}
+
+.talent-show-admin.is-inactive .talent-show-header {
+  margin-bottom: 49px;
+}
+
+.talent-show-admin.is-inactive .talent-show-search {
+  margin-bottom: 39px;
+}
+
+.talent-show-admin.is-inactive .talent-show-search input {
+  width: min(100%, clamp(314px, 23.05vw, 442px));
+  height: clamp(44px, 3.18vw, 61px);
+}
+
+.talent-show-admin.is-inactive .talent-show-table th {
+  height: clamp(48px, 3.34vw, 64px);
+}
+
+.talent-show-admin.is-inactive .talent-show-table td,
+.talent-show-admin.is-inactive .talent-show-table .talent-show-empty {
+  height: 58px !important;
+}
+
+@media (min-width: 851px) {
+  .sharpner-dashboard.talent-show-admin.is-inactive .dashboard-sidebar {
+    width: clamp(203px, 18.2vw, 350px);
+  }
+
+  .sharpner-dashboard.talent-show-admin.is-inactive .dashboard-main {
+    width: calc(100% - clamp(203px, 18.2vw, 350px));
+    margin-left: clamp(203px, 18.2vw, 350px);
+    padding: clamp(38px, 2.82vw, 54px) clamp(36px, 3.7vw, 60px) 30px
+      clamp(36px, 2.48vw, 45px);
+  }
+}
+
 .talent-show-button {
   display: inline-flex;
   min-height: 30px;
@@ -64,12 +120,10 @@
   line-height: 1.2;
   white-space: nowrap;
   cursor: pointer;
-  transition: filter 0.15s ease, transform 0.15s ease;
-}
-
-.talent-show-button:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .talent-show-button:focus-visible,
@@ -365,6 +419,10 @@
     min-height: 0;
     padding: 28px;
   }
+
+  .talent-show-admin.is-inactive .talent-show-card {
+    padding: 28px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -384,6 +442,10 @@
     padding: 18px 14px;
   }
 
+  .talent-show-admin.is-inactive .talent-show-card {
+    padding: 18px 14px;
+  }
+
   .talent-show-search {
     flex-wrap: wrap;
     margin-bottom: 22px;
@@ -392,6 +454,10 @@
   .talent-show-search input {
     width: 100%;
     min-width: 100%;
+  }
+
+  .talent-show-admin.is-inactive .talent-show-search input {
+    min-width: 0;
   }
 
   .talent-show-table {

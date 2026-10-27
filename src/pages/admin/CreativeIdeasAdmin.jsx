@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import AdminLayout from '../../components/layout/AdminLayout.jsx'
+import { downloadCsv } from '../../utils/downloadCsv.js'
+import { downloadPdf } from '../../utils/downloadPdf.js'
 import '../../styles/pages/TalentShow.css'
 import '../../styles/pages/CreativeIdeasAdmin.css'
 
@@ -77,8 +79,9 @@ function parseIdeasResponse(payload) {
 }
 
 function CreativeIdeasAdmin() {
+  const { pathname } = useLocation()
+  const statusFilter = pathname.endsWith('/inactive') ? 'inactive' : 'active'
   const [ideas, setIdeas] = useState([])
-  const [statusFilter, setStatusFilter] = useState('active')
   const [searchText, setSearchText] = useState('')
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
@@ -158,12 +161,21 @@ function CreativeIdeasAdmin() {
     setPage(1)
   }
 
-  function changeStatus(status) {
-    if (apiUrl && (status !== statusFilter || page !== 1)) {
-      setLoading(true)
-    }
-    setStatusFilter(status)
-    setPage(1)
+  function exportIdeas() {
+    downloadCsv(
+      'creative-ideas.csv',
+      ['Name', 'Reel Idea', 'Review Status'],
+      ideas.map((idea) => [idea.name, idea.reelIdea, idea.reviewStatus]),
+    )
+  }
+
+  function exportIdeasPdf() {
+    downloadPdf(
+      'creative-ideas.pdf',
+      'Creative Ideas',
+      ['Name', 'Reel Idea', 'Review Status'],
+      ideas.map((idea) => [idea.name, idea.reelIdea, idea.reviewStatus]),
+    )
   }
 
   function changePage(nextPage) {
@@ -176,52 +188,54 @@ function CreativeIdeasAdmin() {
   }
 
   return (
-    <AdminLayout pageClass="creative-ideas-admin">
+    <AdminLayout
+      pageClass={`creative-ideas-admin${statusFilter === 'inactive' ? ' is-inactive' : ''}`}
+    >
       <main className="dashboard-main creative-ideas-main">
         <header className="creative-ideas-header">
           <h1>
-            <span aria-hidden="true">💡</span>
-            Manage Creative Ideas
+            <span aria-hidden="true">{statusFilter === 'inactive' ? '⏸️' : '💡'}</span>
+            {statusFilter === 'inactive'
+              ? 'Inactive Creative Ideas'
+              : 'Manage Creative Ideas'}
           </h1>
           <div className="creative-ideas-toolbar" aria-label="Creative Ideas actions">
-            <button
-              type="button"
+            <Link
               className={`talent-show-button talent-show-button-active${statusFilter === 'active' ? ' is-selected' : ''}`}
-              onClick={() => changeStatus('active')}
-              aria-pressed={statusFilter === 'active'}
+              to="/admin/ideas"
+              aria-current={statusFilter === 'active' ? 'page' : undefined}
             >
               ✅ Active
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
               className={`talent-show-button talent-show-button-inactive${statusFilter === 'inactive' ? ' is-selected' : ''}`}
-              onClick={() => changeStatus('inactive')}
-              aria-pressed={statusFilter === 'inactive'}
+              to="/admin/ideas/inactive"
+              aria-current={statusFilter === 'inactive' ? 'page' : undefined}
             >
               ⏸ Inactive
-            </button>
-            <Link
+            </Link>
+            {statusFilter === 'active' && <Link
               className="talent-show-button talent-show-button-add"
-              to="/submit-idea"
+              to="/admin/ideas/create"
             >
               ➕ Add New
-            </Link>
-            <button
+            </Link>}
+            {statusFilter === 'active' && <button
               type="button"
               className="talent-show-button talent-show-button-excel"
-              disabled
-              title="Connect the existing export endpoint to enable this action."
+              onClick={exportIdeas}
+              disabled={loading}
             >
               📊 Export Excel
-            </button>
-            <button
+            </button>}
+            {statusFilter === 'active' && <button
               type="button"
               className="talent-show-button talent-show-button-pdf"
-              disabled
-              title="Connect the existing PDF export endpoint to enable this action."
+              onClick={exportIdeasPdf}
+              disabled={loading}
             >
               📄 Export PDF
-            </button>
+            </button>}
           </div>
         </header>
 

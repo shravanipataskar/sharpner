@@ -3,6 +3,47 @@
   --talent-border: rgba(255, 214, 0, 0.3);
 }
 
+.users-admin.is-inactive .users-toolbar a {
+  text-decoration: none;
+}
+
+.users-admin.is-inactive
+  .users-toolbar
+  .talent-show-button-active:not(.is-selected) {
+  background: #46576e;
+}
+
+.users-admin.is-inactive
+  .users-toolbar
+  .talent-show-button-inactive.is-selected {
+  background: #2864e8;
+}
+
+.users-admin.is-inactive .users-card {
+  min-height: 0;
+  padding: 43px 43px 60px;
+}
+
+.users-admin.is-inactive .users-bottom-bar {
+  display: none;
+}
+
+.users-admin.is-inactive .users-table th {
+  height: 52px;
+}
+
+.users-admin.is-inactive .users-table td {
+  height: 56px;
+}
+
+.users-admin.is-inactive .users-header {
+  margin-bottom: 42px;
+}
+
+.users-admin.is-inactive .users-table th {
+  height: 50px;
+}
+
 @media (min-width: 851px) {
   .sharpner-dashboard.users-admin .dashboard-sidebar {
     width: clamp(203px, 18.3vw, 291px);
@@ -12,6 +53,11 @@
     width: calc(100% - clamp(203px, 18.3vw, 291px));
     margin-left: clamp(203px, 18.3vw, 291px);
     padding: 42px 41px 30px;
+  }
+
+  .sharpner-dashboard.users-admin.is-inactive .dashboard-main {
+    padding-right: 39px;
+    padding-left: 39px;
   }
 }
 
@@ -174,6 +220,10 @@
     min-height: 0;
     padding: 26px;
   }
+
+  .users-admin.is-inactive .users-card {
+    padding: 26px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -191,6 +241,10 @@
   }
 
   .users-card {
+    padding: 18px 14px;
+  }
+
+  .users-admin.is-inactive .users-card {
     padding: 18px 14px;
   }
 

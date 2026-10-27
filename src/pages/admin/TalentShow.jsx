@@ -1,5 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import AdminLayout from '../../components/layout/AdminLayout.jsx'
+import { downloadCsv } from '../../utils/downloadCsv.js'
+import { downloadPdf } from '../../utils/downloadPdf.js'
 import '../../styles/pages/TalentShow.css'
 
 const apiUrl = import.meta.env.VITE_TALENT_SHOW_API
@@ -60,16 +63,12 @@ function getApplicationList(payload) {
 }
 
 function TalentShow() {
+  const { pathname } = useLocation()
+  const statusFilter = pathname.endsWith('/inactive') ? 'inactive' : 'active'
   const [applications, setApplications] = useState([])
-  const [statusFilter, setStatusFilter] = useState('active')
   const [search, setSearch] = useState('')
   const [selectedApplication, setSelectedApplication] = useState(null)
-  const [loadState, setLoadState] = useState({
-    loading: Boolean(apiUrl),
-    error: apiUrl
-      ? ''
-      : 'Talent Show data is not connected. Set VITE_TALENT_SHOW_API to the database-backed applications endpoint.',
-  })
+  const [loading, setLoading] = useState(Boolean(apiUrl))
 
   useEffect(() => {
     if (!apiUrl) {
@@ -79,10 +78,12 @@ function TalentShow() {
     const controller = new AbortController()
 
     async function loadApplications() {
-      setLoadState({ loading: true, error: '' })
+      setLoading(true)
 
       try {
-        const response = await fetch(apiUrl, {
+        const requestUrl = new URL(apiUrl, window.location.origin)
+        requestUrl.searchParams.set('status', statusFilter)
+        const response = await fetch(requestUrl, {
           headers: { Accept: 'application/json' },
           signal: controller.signal,
         })
@@ -96,23 +97,19 @@ function TalentShow() {
         const payload = await response.json()
         const records = getApplicationList(payload)
         setApplications(records.map(normalizeApplication))
-        setLoadState({ loading: false, error: '' })
+        setLoading(false)
       } catch (error) {
         if (error.name !== 'AbortError') {
-          setLoadState({
-            loading: false,
-            error:
-              error instanceof Error
-                ? error.message
-                : 'Unable to load Talent Show applications.',
-          })
+          console.error('Unable to load Talent Show applications.', error)
+          setApplications([])
+          setLoading(false)
         }
       }
     }
 
     loadApplications()
     return () => controller.abort()
-  }, [])
+  }, [statusFilter])
 
   const visibleApplications = useMemo(() => {
     const query = search.trim().toLowerCase()
@@ -135,76 +132,80 @@ function TalentShow() {
 
   function resetFilters() {
     setSearch('')
-    setStatusFilter('active')
   }
 
   function exportExcel() {
-    const columns = ['Child Name', 'Contact No', 'Parent Name', 'Age', 'City']
-    const rows = visibleApplications.map((application) =>
-      applicationFields.map(([field]) => application[field]),
+    downloadCsv(
+      'talent-show-applications.csv',
+      applicationFields.map(([, label]) => label),
+      visibleApplications.map((application) =>
+        applicationFields.map(([field]) => application[field]),
+      ),
     )
-    const csv = [columns, ...rows]
-      .map((row) =>
-        row.map((value) => `"${String(value).replaceAll('"', '""')}"`).join(','),
-      )
-      .join('\r\n')
-    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }))
-    const link = document.createElement('a')
-    link.href = url
-    link.download = 'talent-show-applications.csv'
-    link.click()
-    URL.revokeObjectURL(url)
+  }
+
+  function exportPdf() {
+    downloadPdf(
+      'talent-show-applications.pdf',
+      'Talent Show Applications',
+      applicationFields.map(([, label]) => label),
+      visibleApplications.map((application) =>
+        applicationFields.map(([field]) => application[field]),
+      ),
+    )
   }
 
   return (
-    <AdminLayout pageClass="talent-show-admin">
+    <AdminLayout
+      pageClass={`talent-show-admin${statusFilter === 'inactive' ? ' is-inactive' : ''}`}
+    >
       <main className="dashboard-main talent-show-main">
         <header className="talent-show-header">
           <h1>
-            <span aria-hidden="true">🏆</span>
-            Manage Talent Show Applications
+            <span aria-hidden="true">
+              {statusFilter === 'inactive' ? '⏸️' : '🏆'}
+            </span>
+            {statusFilter === 'inactive'
+              ? 'Inactive Talent Show Applications'
+              : 'Manage Talent Show Applications'}
           </h1>
           <div className="talent-show-toolbar" aria-label="Application actions">
-            <button
-              type="button"
+            <Link
               className={`talent-show-button talent-show-button-active${statusFilter === 'active' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('active')}
-              aria-pressed={statusFilter === 'active'}
+              to="/admin/talent-show"
+              aria-current={statusFilter === 'active' ? 'page' : undefined}
             >
               ✅ Active
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
               className={`talent-show-button talent-show-button-inactive${statusFilter === 'inactive' ? ' is-selected' : ''}`}
-              onClick={() => setStatusFilter('inactive')}
-              aria-pressed={statusFilter === 'inactive'}
+              to="/admin/talent-show/inactive"
+              aria-current={statusFilter === 'inactive' ? 'page' : undefined}
             >
               ⏸️ Inactive
-            </button>
-            <button
-              type="button"
+            </Link>
+            {statusFilter === 'active' && <Link
               className="talent-show-button talent-show-button-add"
-              disabled
-              title="Connect a create-application API to enable this action."
+              to="/admin/talent-show/create"
             >
               ➕ Add New
-            </button>
-            <button
+            </Link>}
+            {statusFilter === 'active' && <button
               type="button"
               className="talent-show-button talent-show-button-excel"
               onClick={exportExcel}
-              disabled={visibleApplications.length === 0}
+              disabled={loading}
             >
               📊 Export Excel
-            </button>
-            <button
+            </button>}
+            {statusFilter === 'active' && <button
               type="button"
               className="talent-show-button talent-show-button-pdf"
-              onClick={() => window.print()}
-              disabled={visibleApplications.length === 0}
+              onClick={exportPdf}
+              disabled={loading}
             >
               📄 Export PDF
-            </button>
+            </button>}
           </div>
         </header>
 
@@ -223,12 +224,12 @@ function TalentShow() {
               placeholder="Search by child name, age, city or contact..."
               value={search}
               onChange={(event) => setSearch(event.target.value)}
-              disabled={loadState.loading || Boolean(loadState.error)}
+              disabled={loading}
             />
             <button
               type="submit"
               className="talent-show-button talent-show-button-search"
-              disabled={loadState.loading || Boolean(loadState.error)}
+              disabled={loading}
             >
               🔍 Search
             </button>
@@ -240,19 +241,6 @@ function TalentShow() {
               ✕ Reset
             </button>
           </form>
-
-          {loadState.error && (
-            <p className="talent-show-data-message is-error" role="alert">
-              {loadState.error}
-            </p>
-          )}
-
-          {!loadState.error && !loadState.loading && (
-            <p className="talent-show-data-message">
-              Add, edit, and activation changes require the corresponding
-              database write API; this page does not save local-only changes.
-            </p>
-          )}
 
           <div className="talent-show-table-scroll">
             <table className="talent-show-table">
@@ -267,17 +255,10 @@ function TalentShow() {
                 </tr>
               </thead>
               <tbody>
-                {loadState.loading ? (
+                {loading ? (
                   <tr>
                     <td className="talent-show-empty" colSpan="6">
                       Loading Talent Show applications...
-                    </td>
-                  </tr>
-                ) : loadState.error ? (
-                  <tr>
-                    <td className="talent-show-empty" colSpan="6">
-                      No database records are displayed until the API is
-                      configured.
                     </td>
                   </tr>
                 ) : visibleApplications.length > 0 ? (
