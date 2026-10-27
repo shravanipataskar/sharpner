@@ -16,11 +16,15 @@ import ChildAuditionForm from '../pages/public/ChildAuditionForm.jsx';
 import ChildSafetyPolicy from '../pages/public/ChildSafetyPolicy.jsx';
 import CommunityGuidelines from '../pages/public/CommunityGuidelines.jsx';
 import CreativeIdeaSubmission from '../pages/public/CreativeIdeaSubmission.jsx';
+import LoginPage from "../pages/public/LoginPage.jsx";
+import Dashboard from "../pages/admin/Dashboard.jsx";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+         <Route path="/login" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route element={<PublicLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
