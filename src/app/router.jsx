@@ -18,6 +18,11 @@ import CommunityGuidelines from '../pages/public/CommunityGuidelines.jsx';
 import CreativeIdeaSubmission from '../pages/public/CreativeIdeaSubmission.jsx';
 import LoginPage from "../pages/public/LoginPage.jsx";
 import Dashboard from "../pages/admin/Dashboard.jsx";
+import TalentShow from "../pages/admin/TalentShow.jsx";
+import CreativeIdeasAdmin from "../pages/admin/CreativeIdeasAdmin.jsx";
+import CollaborationsAdmin from "../pages/admin/CollaborationsAdmin.jsx";
+import TicketsAdmin from "../pages/admin/TicketsAdmin.jsx";
+import UsersAdmin from "../pages/admin/UsersAdmin.jsx";
 
 function AppRouter() {
   return (
@@ -25,6 +30,12 @@ function AppRouter() {
       <Routes>
          <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admin/talent-show" element={<TalentShow />} />
+        <Route path="/admin/ideas" element={<CreativeIdeasAdmin />} />
+        <Route path="/admin/collaborations" element={<CollaborationsAdmin />} />
+        <Route path="/admin/brand-deals" element={<CollaborationsAdmin />} />
+        <Route path="/admin/tickets" element={<TicketsAdmin />} />
+        <Route path="/admin/users" element={<UsersAdmin />} />
         <Route element={<PublicLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

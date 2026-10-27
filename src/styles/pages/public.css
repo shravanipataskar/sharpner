@@ -950,3 +950,67 @@ body:has(.legal-page),
     text-align: center;
   }
 }
+
+@media (min-width: 992px) {
+  #root:has(.brand-deals-page) .footer-section {
+    background: #141414;
+  }
+
+  #root:has(.brand-deals-page) .footer-main {
+    height: 149px;
+    min-height: 149px;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 24px;
+    padding: 0 max(35px, min(3.55vw, 68px));
+  }
+
+  #root:has(.brand-deals-page) .footer-brand h4 {
+    font-size: 45px;
+    line-height: 1.2;
+  }
+
+  #root:has(.brand-deals-page) .footer-brand h4 span {
+    color: #dedede;
+  }
+
+  #root:has(.brand-deals-page) .footer-brand p {
+    margin-top: 5px;
+    font-size: 22.5px;
+    line-height: 1.35;
+  }
+
+  #root:has(.brand-deals-page) .footer-follow {
+    width: 388px;
+    height: 84px;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 8px 26px;
+  }
+
+  #root:has(.brand-deals-page) .footer-follow span {
+    font-size: 20px;
+  }
+
+  #root:has(.brand-deals-page) .footer-follow a {
+    width: 55px;
+    height: 55px;
+    flex: 0 0 55px;
+    font-size: 22px;
+  }
+
+  #root:has(.brand-deals-page) .footer-links {
+    gap: 0;
+  }
+
+  #root:has(.brand-deals-page) .footer-links a {
+    padding-inline: 25px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  #root:has(.brand-deals-page) .footer-bottom {
+    height: 67px;
+    padding: 0 max(35px, min(3.55vw, 68px));
+    font-size: 20px;
+  }
+}
