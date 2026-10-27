@@ -6,7 +6,7 @@ function Footer({ isHomePage }) {
       <div className="footer-main">
         <div className="footer-brand">
           <h4>
-            <strong>Sharpner</strong> <span>World</span>
+            <span>Sharpner World</span>
           </h4>
           <p>A Movement Of Little Ones With Big Dreams</p>
         </div>

@@ -622,12 +622,12 @@
 /* Layout for the registration form markup */
 .child-audition-page {
   min-height: 0;
-  padding: 30px 0 14px;
+  padding: 32px 0 11px;
   background: #1a1a1a;
 }
 
 .audition-container {
-  width: min(80%, 1070px);
+  width: min(80%, 565px);
   max-width: none;
 }
 
@@ -635,12 +635,12 @@
 .audition-registration-heading h2 {
   position: relative;
   margin: 0;
-  padding: 0 10px 8px;
+  padding: 0 10px 3px;
   border-bottom: 1px solid rgba(255, 213, 0, 0.2);
   color: var(--audition-yellow);
   font-size: 12px;
   font-weight: 800;
-  line-height: 1.6;
+  line-height: 1;
   text-align: center;
 }
 
@@ -663,7 +663,7 @@
   margin: 11px auto 0;
   color: #c5c5c5;
   font-size: 12px;
-  line-height: 1.65;
+  line-height: 1.35;
 }
 
 .audition-divider {
@@ -672,22 +672,23 @@
 }
 
 .audition-registration-heading {
-  margin-bottom: 27px;
+  margin-bottom: 25px;
 }
 
 .audition-registration-heading p {
+  max-width: 450px;
   margin-top: 10px;
 }
 
 .audition-layout {
   display: grid;
-  grid-template-columns: minmax(140px, 0.95fr) minmax(0, 2fr) minmax(110px, 0.95fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr) minmax(0, 1fr);
   align-items: start;
   gap: 14px;
 }
 
 .audition-steps {
-  padding: 13px;
+  padding: 11px;
   border: 2px solid var(--audition-yellow);
   border-radius: 17px;
   background: linear-gradient(145deg, #111, #202020);
@@ -696,9 +697,10 @@
 .audition-steps h2 {
   margin: 0 0 12px;
   color: var(--audition-yellow);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
   text-align: center;
+  white-space: nowrap;
 }
 
 .audition-steps-list {
@@ -713,9 +715,9 @@
 }
 
 .audition-step-number {
-  flex-basis: 23px;
-  width: 23px;
-  height: 23px;
+  flex-basis: 22px;
+  width: 22px;
+  height: 22px;
   border-width: 1px;
   font-size: 10px;
 }
@@ -730,7 +732,7 @@
 }
 
 .audition-form-card {
-  padding: 11px;
+  padding: 10px 11px;
   border-radius: 16px;
 }
 
@@ -875,8 +877,8 @@
 
 .audition-previous,
 .audition-next {
-  min-height: 27px;
-  padding: 7px 12px;
+  min-height: 18px;
+  padding: 2px 10px;
   border-radius: 20px;
   font-size: 9px;
 }
@@ -885,28 +887,28 @@
   margin: 10px 3px;
 }
 
-.audition-site-header {
-  min-height: 66px;
-  padding-inline: max(24px, calc((100% - 1070px) / 2));
+.brand-deals-header.audition-site-header {
+  min-height: 60px;
+  padding-inline: max(24px, calc((100% - 640px) / 2));
 }
 
 .audition-site-header .brand-deals-logo img {
-  height: 60px;
+  height: 54px;
 }
 
-.audition-site-header .site-nav {
+.brand-deals-header.audition-site-header .site-nav {
   gap: 6px;
 }
 
-.audition-site-header .site-nav a {
-  padding: 6px 9px;
-  font-size: 10px;
+.brand-deals-header.audition-site-header .site-nav a {
+  padding: 6px;
+  font-size: 9px;
 }
 
 #root:has(.child-audition-page) .footer-main {
-  grid-template-columns: minmax(130px, 1fr) auto minmax(0, 1.3fr);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 12px;
-  padding: 9px max(24px, calc((100% - 1070px) / 2));
+  padding: 5px max(24px, calc((100% - 1070px) / 2));
 }
 
 #root:has(.child-audition-page) .footer-brand h4 {
@@ -953,20 +955,31 @@
 }
 
 #root:has(.child-audition-page) .footer-bottom {
-  padding: 7px max(24px, calc((100% - 1070px) / 2));
+  padding: 4px max(24px, calc((100% - 1070px) / 2));
+}
+
+@media (min-width: 701px) {
+  #root:has(.child-audition-page) .footer-follow {
+    gap: 5px;
+    padding: 5px 8px;
+  }
+
+  #root:has(.child-audition-page) .footer-links {
+    gap: 14px;
+  }
 }
 
 @media (max-width: 1000px) {
   .audition-layout {
-    grid-template-columns: minmax(140px, 0.95fr) minmax(0, 2fr) minmax(100px, 0.85fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr) minmax(0, 1fr);
   }
 }
 
 @media (min-width: 701px) and (max-width: 991px) {
-  .audition-site-header {
-    min-height: 66px;
+  .brand-deals-header.audition-site-header {
+    min-height: 60px;
     flex-wrap: nowrap;
-    padding: 3px 24px;
+    padding: 3px max(24px, calc((100% - 640px) / 2));
   }
 
   .audition-site-header .brand-deals-menu-toggle {
