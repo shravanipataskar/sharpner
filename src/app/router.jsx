@@ -27,12 +27,31 @@ import CollaborationCreateAdmin from "../pages/admin/CollaborationCreateAdmin.js
 import TicketsAdmin from "../pages/admin/TicketsAdmin.jsx";
 import TicketCreateAdmin from "../pages/admin/TicketCreateAdmin.jsx";
 import UsersAdmin from "../pages/admin/UsersAdmin.jsx";
+import VideoPage from "../pages/admin/VideoPage.jsx";
+import AuditionsPage from "../pages/admin/AuditionsPage.jsx";
+import DholPathakPage from "../pages/admin/DholPathakPage.jsx";
+import CreateVideoPage from "../pages/admin/CreateVideoPage.jsx";
+import CreateAuditionPage from "../pages/admin/CreateAuditionPage.jsx";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
          <Route path="/login" element={<LoginPage />} />
+         <Route path="/dashboard" element={<Dashboard />} />
+         <Route path="/admin/talent-show" element={<TalentShow />} />
+         <Route path="/admin/ideas" element={<CreativeIdeasAdmin />} />
+         <Route path="/admin/collaborations" element={<CollaborationsAdmin />} />
+         <Route path="/admin/brand-deals" element={<CollaborationsAdmin />} />
+         <Route path="/admin/tickets" element={<TicketsAdmin />} />
+         <Route path="/admin/users" element={<UsersAdmin />} />
+         <Route path="/admin/videos" element={<VideoPage />} />
+         <Route path="/admin/auditions" element={<AuditionsPage />}/>
+         <Route path="/admin/dhol-pathak" element={<DholPathakPage />}/>
+         <Route path="/videos/create" element={<CreateVideoPage />} />
+         <Route path="/admin/auditions/create" element={<CreateAuditionPage />}/>
+
+         <Route element={<PublicLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin/talent-show" element={<TalentShow />} />
         <Route path="/admin/talent-show/inactive" element={<TalentShow />} />
