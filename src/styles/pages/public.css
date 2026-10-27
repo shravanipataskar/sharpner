@@ -169,9 +169,13 @@
 }
 
 .brand-deals-header .site-nav a:hover,
+.brand-deals-header .site-nav a:focus-visible,
 .brand-deals-header .site-nav a.active {
   background: rgb(255 215 0 / 10%);
   color: #ffd700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 .brand-deals-menu-toggle {
@@ -194,6 +198,7 @@
 }
 
 .brand-deals-title {
+  position: relative;
   max-width: 940px;
   margin: 0 auto 18px;
   padding-bottom: 10px;
@@ -207,7 +212,15 @@
 }
 
 .brand-deals-title::after {
-  display: none;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 86px;
+  height: 2px;
+  content: '';
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: linear-gradient(90deg, #ffd700, transparent);
 }
 
 .brand-deals-intro p {
