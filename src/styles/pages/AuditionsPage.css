@@ -1,0 +1,600 @@
+/* =========================================
+SHARPNER AUDITIONS PAGE
+========================================= */
+
+html:has(.sharpner-auditions-page) {
+zoom: 1;
+}
+
+html:has(.sharpner-auditions-page),
+body:has(.sharpner-auditions-page),
+#root:has(.sharpner-auditions-page) {
+background: #191919;
+}
+
+.sharpner-auditions-page {
+--aud-yellow: #ffd600;
+--aud-black: #191919;
+--aud-panel: #232323;
+--aud-border: rgba(255, 214, 0, 0.4);
+--aud-white: #ffffff;
+
+min-height: 100vh;
+display: flex;
+background: var(--aud-black);
+color: var(--aud-white);
+font-family: "Outfit", Arial, sans-serif;
+font-size: 14px;
+}
+
+.sharpner-auditions-page,
+.sharpner-auditions-page * {
+box-sizing: border-box;
+}
+
+.sharpner-auditions-page button,
+.sharpner-auditions-page input,
+.sharpner-auditions-page a {
+font-family: inherit;
+}
+
+/* =========================================
+SIDEBAR
+========================================= */
+
+.auditions-sidebar {
+position: fixed;
+inset: 0 auto 0 0;
+z-index: 1000;
+width: 280px;
+min-height: 100vh;
+overflow-y: auto;
+background: var(--aud-yellow);
+color: #111111;
+}
+
+.auditions-sidebar-brand {
+height: 124px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.auditions-sidebar-brand a {
+color: #ffffff;
+font-size: 23px;
+font-weight: 900;
+letter-spacing: 1.4px;
+text-decoration: none;
+}
+
+.auditions-navigation {
+padding: 12px 20px 30px;
+}
+
+.auditions-nav-link {
+position: relative;
+min-height: 49px;
+margin-bottom: 0;
+padding: 12px 13px;
+display: flex;
+align-items: center;
+gap: 9px;
+border-radius: 5px;
+color: #111111;
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+transition: background 0.2s ease, color 0.2s ease;
+}
+
+.auditions-nav-link:hover {
+background: rgba(255, 255, 255, 0.35);
+color: #000000;
+}
+
+.auditions-nav-active {
+border-left: 3px solid rgba(100, 70, 0, 0.65);
+background: rgba(255, 255, 255, 0.18);
+color: #725c00;
+}
+
+.auditions-nav-icon {
+width: 16px;
+flex-shrink: 0;
+color: #ffffff;
+font-size: 20px;
+line-height: 1;
+text-align: center;
+}
+
+/* Sign out */
+
+.auditions-signout {
+width: calc(100% - 40px);
+min-height: 54px;
+margin: 37px 20px 0;
+padding: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+border: none;
+border-radius: 9px;
+background: #d92e43;
+box-shadow: 0 4px 12px rgba(150, 0, 0, 0.13);
+color: #ffffff;
+font-size: 14px;
+font-weight: 700;
+cursor: pointer;
+transition: background 0.2s ease;
+}
+
+.auditions-signout:hover {
+background: #bd2035;
+}
+
+.auditions-signout span {
+font-size: 20px;
+}
+
+/* =========================================
+MAIN CONTENT
+========================================= */
+
+.auditions-main {
+flex: 1 1 0;
+width: auto;
+min-width: 0;
+min-height: 100vh;
+margin-left: 280px;
+padding: 40px 40px 42px;
+background: var(--aud-black);
+}
+
+.auditions-header {
+min-height: 48px;
+margin-bottom: 38px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+}
+
+.auditions-header h1 {
+margin: 0;
+display: flex;
+align-items: center;
+gap: 12px;
+color: var(--aud-yellow);
+font-size: 28px;
+font-weight: 800;
+line-height: 1.35;
+}
+
+.auditions-title-icon {
+font-size: 27px;
+}
+
+/* =========================================
+HEADER BUTTONS
+========================================= */
+
+.auditions-header-actions {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.auditions-status-button,
+.auditions-inactive-button,
+.auditions-add-new-button,
+.auditions-export-excel,
+.auditions-export-pdf {
+min-height: 33px;
+padding: 8px 17px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 5px;
+border: none;
+border-radius: 9px;
+color: #ffffff;
+font-size: 12px;
+font-weight: 700;
+white-space: nowrap;
+cursor: pointer;
+transition: filter 0.2s ease, transform 0.2s ease;
+text-decoration: none;
+}
+
+.auditions-status-button:hover,
+.auditions-inactive-button:hover,
+.auditions-add-new-button:hover,
+.auditions-export-excel:hover,
+.auditions-export-pdf:hover {
+filter: brightness(1.1);
+transform: translateY(-1px);
+}
+
+.auditions-status-button {
+background: #2864e8;
+}
+
+.auditions-status-active {
+background: #2864e8;
+}
+
+.auditions-inactive-button {
+background: #46566d;
+}
+
+.auditions-inactive-selected {
+box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.65);
+}
+
+.auditions-status-button:not(.auditions-status-selected) {
+opacity: 0.65;
+}
+
+.auditions-add-new-button {
+background: #ffd600;
+color: #111111;
+}
+
+.auditions-add-new-button span {
+color: #7544dc;
+font-size: 19px;
+line-height: 0.8;
+}
+
+.auditions-export-excel {
+background: #16a34a;
+}
+
+.auditions-export-pdf {
+background: #e5242b;
+}
+
+/* =========================================
+CONTENT CARD
+========================================= */
+
+.auditions-content-card {
+width: 100%;
+min-height: 897px;
+padding: 44px 44px 58px;
+border: 1px solid rgba(255, 214, 0, 0.38);
+border-radius: 15px;
+background: var(--aud-panel);
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+SEARCH FORM
+========================================= */
+
+.auditions-search-form {
+margin-bottom: 39px;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 9px;
+}
+
+.auditions-search-form input {
+width: 300px;
+max-width: 100%;
+height: 49px;
+padding: 0 16px;
+border: 2px solid rgba(255, 214, 0, 0.35);
+border-radius: 12px;
+outline: none;
+background: #303030;
+color: #ffffff;
+font-size: 14px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+transition: border-color 0.2s ease;
+}
+
+.auditions-search-form input::placeholder {
+color: #a5a5a5;
+opacity: 1;
+}
+
+.auditions-search-form input:focus {
+border-color: var(--aud-yellow);
+}
+
+.auditions-search-button,
+.auditions-reset-button {
+min-height: 32px;
+padding: 8px 14px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
+border: none;
+border-radius: 8px;
+font-size: 12px;
+font-weight: 700;
+cursor: pointer;
+transition: filter 0.2s ease;
+}
+
+.auditions-search-button:hover,
+.auditions-reset-button:hover {
+filter: brightness(1.08);
+}
+
+.auditions-search-button {
+background: var(--aud-yellow);
+color: #111111;
+}
+
+.auditions-reset-button {
+background: #e5242b;
+color: #ffffff;
+}
+
+.auditions-search-button span,
+.auditions-reset-button span {
+font-size: 16px;
+line-height: 1;
+}
+
+/* =========================================
+AUDITIONS TABLE
+========================================= */
+
+.auditions-table-wrapper {
+width: 100%;
+overflow-x: auto;
+background: #ffffff;
+}
+
+.auditions-table {
+width: 100%;
+border-collapse: collapse;
+table-layout: auto;
+background: #ffffff;
+color: #111111;
+font-size: 14px;
+}
+
+.auditions-table thead {
+background: #ffffff;
+}
+
+.auditions-table th {
+height: 52px;
+padding: 15px 14px;
+border-bottom: 1px solid rgba(255, 214, 0, 0.45);
+color: #111111;
+font-size: 14px;
+font-weight: 800;
+text-align: left;
+white-space: nowrap;
+}
+
+.auditions-table td {
+height: 57px;
+padding: 12px 14px;
+border-bottom: 1px solid rgba(255, 214, 0, 0.16);
+font-size: 13px;
+text-align: left;
+}
+
+.auditions-table tbody tr:last-child td {
+border-bottom: none;
+}
+
+.auditions-empty-cell {
+height: 57px;
+padding: 0 !important;
+background: #ffffff;
+}
+
+/* =========================================
+PAGINATION
+========================================= */
+
+.auditions-pagination {
+margin-top: 39px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.auditions-page-button {
+width: 34px;
+height: 40px;
+margin-left: -1px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #dedede;
+background: #ffffff;
+color: #ffbf00;
+font-size: 14px;
+cursor: pointer;
+transition: background 0.2s ease, color 0.2s ease;
+}
+
+.auditions-page-button:first-child {
+border-radius: 6px 0 0 6px;
+}
+
+.auditions-page-button:last-child {
+border-radius: 0 6px 6px 0;
+}
+
+.auditions-page-button:hover:not(:disabled):not(.auditions-page-current) {
+background: #fff4bf;
+}
+
+.auditions-page-current {
+position: relative;
+z-index: 1;
+border-color: #2864e8;
+background: #2864e8;
+color: #ffffff;
+}
+
+.auditions-page-disabled {
+background: #eeeeee;
+color: #d0d0d0;
+cursor: not-allowed;
+}
+
+/* =========================================
+MOBILE MENU
+========================================= */
+
+.auditions-mobile-toggle {
+display: none;
+}
+
+.auditions-sidebar-backdrop {
+display: none;
+}
+
+/* =========================================
+RESPONSIVE: LAPTOPS
+========================================= */
+
+@media (max-width: 1250px) {
+.auditions-main {
+padding-right: 28px;
+padding-left: 28px;
+}
+
+.auditions-content-card {
+padding-right: 28px;
+padding-left: 28px;
+}
+
+.auditions-header {
+align-items: flex-start;
+}
+
+.auditions-header h1 {
+font-size: 25px;
+}
+
+.auditions-header-actions {
+gap: 6px;
+}
+}
+
+/* =========================================
+RESPONSIVE: TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+.auditions-sidebar {
+width: 250px;
+transform: translateX(-100%);
+transition: transform 0.25s ease;
+}
+
+.auditions-sidebar.auditions-sidebar-open {
+transform: translateX(0);
+}
+
+.auditions-sidebar-backdrop {
+position: fixed;
+inset: 0;
+z-index: 900;
+display: block;
+border: none;
+background: rgba(0, 0, 0, 0.55);
+}
+
+.auditions-main {
+width: 100%;
+margin-left: 0;
+padding: 82px 24px 30px;
+}
+
+.auditions-mobile-toggle {
+position: fixed;
+top: 16px;
+left: 17px;
+z-index: 1100;
+width: 43px;
+height: 43px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid rgba(255, 214, 0, 0.4);
+border-radius: 8px;
+background: var(--aud-yellow);
+color: #111111;
+font-size: 23px;
+cursor: pointer;
+}
+
+.auditions-header {
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.auditions-content-card {
+min-height: 650px;
+padding: 28px 22px 40px;
+}
+}
+
+/* =========================================
+RESPONSIVE: MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+.auditions-main {
+padding: 76px 14px 25px;
+}
+
+.auditions-header {
+align-items: flex-start;
+gap: 18px;
+}
+
+.auditions-header h1 {
+font-size: 22px;
+}
+
+.auditions-title-icon {
+font-size: 23px;
+}
+
+.auditions-header-actions {
+width: 100%;
+justify-content: flex-start;
+}
+
+.auditions-content-card {
+min-height: 500px;
+padding: 22px 12px 32px;
+border-radius: 12px;
+}
+
+.auditions-search-form {
+margin-bottom: 25px;
+gap: 10px;
+}
+
+.auditions-search-form input {
+width: 100%;
+}
+
+.auditions-table {
+min-width: 600px;
+}
+
+.auditions-pagination {
+margin-top: 30px;
+}
+}
