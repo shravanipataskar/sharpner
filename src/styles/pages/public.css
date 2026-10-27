@@ -198,6 +198,7 @@
 }
 
 .brand-deals-title {
+  position: relative;
   max-width: 940px;
   margin: 0 auto 18px;
   padding-bottom: 10px;
@@ -211,7 +212,15 @@
 }
 
 .brand-deals-title::after {
-  display: none;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 86px;
+  height: 2px;
+  content: '';
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: linear-gradient(90deg, #ffd700, transparent);
 }
 
 .brand-deals-intro p {

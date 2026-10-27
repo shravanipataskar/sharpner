@@ -38,32 +38,6 @@
   text-align: center;
 }
 
-.audition-intro h1,
-.audition-registration-heading h2 {
-  position: relative;
-  margin: 0;
-  padding: 0 10px 12px;
-  border-bottom: 1px solid rgba(255, 213, 0, 0.24);
-  color: var(--audition-yellow);
-  font-size: 17px;
-  font-weight: 800;
-  line-height: 1.6;
-  text-align: center;
-}
-
-.audition-intro h1::after,
-.audition-registration-heading h2::after {
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 60px;
-  height: 3px;
-  content: "";
-  transform: translateX(-50%);
-  border-radius: 5px;
-  background: var(--audition-yellow);
-}
-
 .audition-intro p,
 .audition-registration-heading p {
   max-width: 800px;
@@ -647,14 +621,14 @@
 .audition-intro h2::after,
 .audition-registration-heading h2::after {
   position: absolute;
-  bottom: clamp(-5px, -0.26vw, -2.5px);
+  bottom: -5px;
   left: 50%;
-  width: clamp(52px, 2.74vw, 53px);
-  height: clamp(3.75px, 0.2vw, 4px);
+  width: 86px;
+  height: 2px;
   content: "";
   transform: translateX(-50%);
-  border-radius: 6px;
-  background: var(--audition-yellow);
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--audition-yellow), transparent);
 }
 
 .audition-intro p,
