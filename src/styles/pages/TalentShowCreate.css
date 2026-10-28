@@ -198,6 +198,169 @@
   border-left-width: 2px;
 }
 
+.talent-show-edit-admin .talent-show-create-header {
+  align-items: center;
+  margin-bottom: clamp(24px, 2.82vw, 43px);
+}
+
+.talent-show-edit-admin .talent-show-create-header h1 {
+  font-size: clamp(23px, 1.88vw, 36px);
+}
+
+.talent-show-edit-admin .talent-show-create-back {
+  margin-top: 0;
+}
+
+.talent-show-edit-admin .talent-show-edit-card {
+  padding-top: clamp(30px, 3.2vw, 56px);
+}
+
+.talent-show-edit-admin .talent-show-edit-card h2 {
+  margin-bottom: clamp(20px, 1.1vw, 22px);
+}
+
+.talent-show-edit-admin .talent-show-create-form {
+  row-gap: clamp(24px, 2.1vw, 40px);
+}
+
+.talent-show-edit-admin .talent-show-create-field.is-full-width textarea {
+  height: clamp(90px, 4.65vw, 100px);
+}
+
+.talent-show-edit-admin .talent-show-create-file {
+  min-height: 34px;
+}
+
+.talent-show-edit-video {
+  display: block;
+  width: min(100%, 360px);
+  max-height: 220px;
+  border-radius: 7px;
+  background: #111;
+}
+
+.talent-show-edit-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #ff8585;
+  white-space: pre-line;
+}
+
+.talent-show-edit-message {
+  padding: 18px 20px;
+  border: 1px solid var(--create-border);
+  border-radius: 10px;
+  background: #232323;
+  color: #fff;
+}
+
+.talent-show-edit-message.is-error {
+  color: #ff9a9a;
+}
+
+.talent-show-edit-message a {
+  color: var(--create-yellow);
+}
+
+.talent-show-detail-card {
+  padding: clamp(22px, 2.8vw, 54px);
+}
+
+.talent-show-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(20px, 3vw, 52px);
+  margin: 0;
+}
+
+.talent-show-detail-grid > div {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.8fr) minmax(0, 1.2fr);
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 214, 0, 0.18);
+}
+
+.talent-show-detail-grid dt {
+  color: var(--create-yellow);
+  font-weight: 700;
+}
+
+.talent-show-detail-grid dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #fff;
+}
+
+.talent-show-detail-video {
+  margin-top: 24px;
+}
+
+.talent-show-detail-video h3 {
+  color: var(--create-yellow);
+}
+
+.talent-show-detail-video video {
+  display: block;
+  width: min(100%, 640px);
+  max-height: 360px;
+  border-radius: 8px;
+  background: #111;
+}
+
+.talent-show-edit-admin .talent-show-create-actions .talent-show-button {
+  min-height: 34px;
+}
+
+@media (min-width: 701px) {
+  .sharpner-dashboard.talent-show-edit-admin .talent-show-create-main {
+    width: calc(100% - clamp(140px, 18.3vw, 350px));
+    margin-left: clamp(140px, 18.3vw, 350px);
+    padding: clamp(24px, 3.08vw, 60px) clamp(18px, 3vw, 58px) 30px
+      clamp(18px, 2.58vw, 50px);
+  }
+
+  .sharpner-dashboard.talent-show-edit-admin .dashboard-sidebar {
+    width: clamp(140px, 18.3vw, 350px);
+    transform: none;
+    transition: none;
+  }
+
+  .sharpner-dashboard.talent-show-edit-admin .dashboard-sidebar-brand {
+    height: clamp(76px, 9vw, 173px);
+  }
+
+  .sharpner-dashboard.talent-show-edit-admin .dashboard-sidebar-brand a {
+    font-size: clamp(14px, 1.35vw, 26px);
+  }
+
+  .sharpner-dashboard.talent-show-edit-admin .dashboard-navigation {
+    padding: 0 clamp(10px, 1.3vw, 25px) 25px;
+  }
+
+  .sharpner-dashboard.talent-show-edit-admin .dashboard-nav-link {
+    min-height: clamp(30px, 3.13vw, 56px);
+    padding: 8px clamp(6px, 0.8vw, 12px);
+    gap: clamp(4px, 0.6vw, 9px);
+    font-size: clamp(11px, 0.95vw, 18px);
+  }
+
+  .sharpner-dashboard.talent-show-edit-admin .dashboard-nav-icon {
+    width: clamp(12px, 1.05vw, 16px);
+    font-size: clamp(14px, 1.32vw, 20px);
+  }
+
+  .sharpner-dashboard.talent-show-edit-admin .dashboard-signout {
+    width: calc(100% - clamp(20px, 2.4vw, 36px));
+    min-height: clamp(36px, 3.7vw, 56px);
+    margin: clamp(20px, 2.44vw, 37px) auto 0;
+    padding: 8px;
+    gap: clamp(5px, 0.8vw, 12px);
+    font-size: clamp(11px, 1.05vw, 16px);
+  }
+}
+
 @media (min-width: 851px) {
   .sharpner-dashboard.talent-show-create-admin .talent-show-create-main {
     width: calc(100% - clamp(203px, 18.15vw, 350px));

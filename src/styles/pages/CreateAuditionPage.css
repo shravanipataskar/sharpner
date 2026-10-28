@@ -554,6 +554,129 @@ body:has(.sharpner-create-audition),
   background: #ffbe00;
 }
 
+.audition-form-actions button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.audition-form-feedback {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 110, 110, 0.55);
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.audition-form-feedback-error,
+.audition-edit-error {
+  background: rgba(130, 25, 30, 0.18);
+  color: #ffaaaa;
+}
+
+.audition-edit-message {
+  padding: 24px;
+  border: 1px solid var(--audition-border);
+  border-radius: 12px;
+  background: var(--audition-card);
+  color: #f0f0f0;
+  font-size: 15px;
+}
+
+.audition-edit-error p {
+  margin: 0 0 16px;
+}
+
+.audition-edit-error button {
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #46566d;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.audition-edit-page .auditions-sidebar {
+  width: clamp(253px, 18.25vw, 272px);
+  background: var(--audition-yellow);
+  color: #111111;
+}
+
+.audition-edit-page .auditions-sidebar-brand a {
+  color: #ffffff;
+}
+
+.audition-edit-page .auditions-nav-link {
+  color: #111111;
+}
+
+.audition-edit-page .auditions-nav-link:hover {
+  background: rgba(255, 255, 255, 0.35);
+  color: #000000;
+}
+
+.audition-edit-page .auditions-nav-link.auditions-nav-active {
+  border-left: 3px solid rgba(100, 70, 0, 0.65);
+  background: rgba(255, 255, 255, 0.18);
+  color: #725c00;
+}
+
+.audition-edit-page .auditions-nav-icon {
+  color: #ffffff;
+}
+
+.audition-edit-page .auditions-signout {
+  background: #d92e43;
+  color: #ffffff;
+}
+
+.audition-edit-page .auditions-signout:hover {
+  background: #bd2035;
+}
+
+.audition-edit-page .audition-create-main {
+  width: calc(100% - clamp(253px, 18.25vw, 272px));
+  margin-left: clamp(253px, 18.25vw, 272px);
+  padding: 40px clamp(32px, 2.4vw, 36px) 42px
+    clamp(33px, 2.62vw, 39px);
+}
+
+.audition-edit-page .audition-create-form {
+  width: 100%;
+}
+
+.audition-edit-page .auditions-sidebar-brand {
+  height: 124px;
+}
+
+.audition-edit-page .auditions-navigation {
+  padding: 12px 20px 30px;
+}
+
+.audition-edit-page .auditions-nav-link {
+  min-height: 49px;
+  margin: 0;
+  padding: 12px 13px;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.audition-edit-page .auditions-signout {
+  width: calc(100% - 40px);
+  min-height: 54px;
+  margin: 37px 20px 0;
+  padding: 12px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
 /* =========================================
    MOBILE NAVIGATION
 ========================================= */
@@ -596,6 +719,12 @@ body:has(.sharpner-create-audition),
 
   .audition-create-header h1 {
     font-size: 25px;
+  }
+
+  .audition-edit-page .audition-create-main {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 28px 24px 35px;
   }
 }
 
@@ -656,6 +785,33 @@ body:has(.sharpner-create-audition),
 
   .audition-create-header h1 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .audition-edit-page .auditions-sidebar {
+    width: 250px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .audition-edit-page .auditions-sidebar.auditions-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .audition-edit-page .auditions-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    display: block;
+    border: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .audition-edit-page .audition-create-main {
+    width: 100%;
+    margin-left: 0;
+    padding: 82px 24px 30px;
   }
 }
 
@@ -736,5 +892,19 @@ body:has(.sharpner-create-audition),
 
   .audition-form-actions button {
     min-height: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .audition-edit-page .audition-create-main {
+    padding: 76px 14px 25px;
+  }
+
+  .audition-edit-page .audition-create-form {
+    padding: 12px;
+  }
+
+  .audition-edit-page .audition-form-section {
+    padding: 12px;
   }
 }

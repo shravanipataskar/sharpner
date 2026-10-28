@@ -40,7 +40,7 @@ body:has(.sharpner-dhol-page),
   left: 0;
   bottom: 0;
   z-index: 1000;
-  width: 280px;
+  width: 263px;
   height: 100vh;
   min-height: 100vh;
   overflow-y: auto;
@@ -67,7 +67,7 @@ body:has(.sharpner-dhol-page),
 
 .dhol-navigation {
   width: 100%;
-  padding: 12px 20px 30px;
+  padding: 12px 19px 30px;
 }
 
 .sharpner-dhol-page .dhol-navigation {
@@ -81,12 +81,12 @@ body:has(.sharpner-dhol-page),
 
 .dhol-nav-link {
   width: 100%;
-  min-height: 49px;
+  min-height: 46px;
   margin: 0 0 0;
-  padding: 12px 13px;
+  padding: 10px 13px;
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 7px;
   border-radius: 5px;
   color: #111;
   font-size: 14px;
@@ -107,20 +107,20 @@ body:has(.sharpner-dhol-page),
 }
 
 .dhol-nav-icon {
-  width: 18px;
-  min-width: 18px;
+  width: 14px;
+  min-width: 14px;
   flex-shrink: 0;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
   text-align: center;
 }
 
 /* Sign Out */
 .dhol-signout {
-  width: calc(100% - 40px);
-  min-height: 54px;
-  margin: 37px 20px 0;
+  width: calc(100% - 38px);
+  min-height: 51px;
+  margin: 29px 19px 0;
   padding: 12px;
   display: flex;
   align-items: center;
@@ -151,15 +151,15 @@ body:has(.sharpner-dhol-page),
   width: auto;
   min-width: 0;
   min-height: 100vh;
-  margin-left: 280px;
-  padding: 40px;
+  margin-left: 263px;
+  padding: 40px 33px 40px 38px;
   background: #191919;
 }
 
 .dhol-header {
   width: 100%;
   min-height: 48px;
-  margin-bottom: 39px;
+  margin-bottom: 32px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -173,7 +173,7 @@ body:has(.sharpner-dhol-page),
   align-items: center;
   gap: 12px;
   color: #ffd600;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   line-height: 1.35;
 }
@@ -182,10 +182,10 @@ body:has(.sharpner-dhol-page),
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
-  width: 432px;
-  margin-right: 88px;
-  flex-shrink: 0;
+  justify-content: flex-end;
+  width: auto;
+  margin-right: 0;
+  flex: 0 0 auto;
   gap: 8px;
 }
 
@@ -194,8 +194,8 @@ body:has(.sharpner-dhol-page),
 .dhol-add-button,
 .dhol-export-excel,
 .dhol-export-pdf {
-  min-height: 33px;
-  padding: 8px 14px;
+  min-height: 30px;
+  padding: 6px 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -246,7 +246,7 @@ body:has(.sharpner-dhol-page),
 .dhol-content-card {
   width: 100%;
   min-height: 953px;
-  padding: 44px;
+  padding: 41px;
   border: 1px solid rgba(255, 214, 0, 0.38);
   border-radius: 15px;
   background: #232323;
@@ -255,7 +255,7 @@ body:has(.sharpner-dhol-page),
 
 .dhol-search-form {
   width: 100%;
-  margin-bottom: 39px;
+  margin-bottom: 37px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -263,9 +263,9 @@ body:has(.sharpner-dhol-page),
 }
 
 .dhol-search-form input {
-  width: 297px;
+  width: 333px;
   max-width: 100%;
-  height: 50px;
+  height: 46px;
   padding: 0 16px;
   border: 2px solid rgba(255, 214, 0, 0.35);
   border-radius: 12px;
@@ -285,8 +285,8 @@ body:has(.sharpner-dhol-page),
 
 .dhol-search-button,
 .dhol-reset-button {
-  min-height: 32px;
-  padding: 8px 14px;
+  min-height: 30px;
+  padding: 6px 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -325,8 +325,8 @@ body:has(.sharpner-dhol-page),
 }
 
 .dhol-table th {
-  height: 74px;
-  padding: 15px 14px;
+  height: 49px;
+  padding: 12px 14px;
   border-bottom: 1px solid rgba(255, 214, 0, 0.45);
   color: #111;
   font-size: 14px;
@@ -336,12 +336,16 @@ body:has(.sharpner-dhol-page),
 }
 
 .dhol-table td {
-  height: 57px;
+  height: 54px;
   padding: 12px 14px;
   border-bottom: 1px solid rgba(255, 214, 0, 0.16);
   font-size: 13px;
   text-align: left;
   vertical-align: middle;
+}
+
+.dhol-table td:first-child {
+  font-weight: 600;
 }
 
 .dhol-empty-cell {
@@ -603,12 +607,8 @@ body:has(.sharpner-dhol-page),
 }
 
 @media (min-width: 1251px) {
-  .dhol-header h1 {
-    width: 350px;
-  }
-
   .dhol-header-actions {
-    padding-top: 13px;
+    padding-top: 7px;
   }
 }
 
@@ -886,6 +886,15 @@ body:has(.sharpner-dhol-page),
     padding: 82px 24px 30px;
   }
 
+  .dhol-header {
+    margin-bottom: 24px;
+  }
+
+  .dhol-header-actions {
+    justify-content: flex-start;
+    flex: 1 1 100%;
+  }
+
   .dhol-header h1 {
     font-size: 24px;
   }
@@ -927,5 +936,340 @@ body:has(.sharpner-dhol-page),
 
   .dhol-create-days {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Dhol Pathak list actions and record pages */
+.dhol-table {
+  min-width: 950px;
+}
+
+.dhol-table th:nth-child(1),
+.dhol-table td:nth-child(1) {
+  width: 20%;
+}
+
+.dhol-table th:nth-child(2),
+.dhol-table td:nth-child(2) {
+  width: 10%;
+}
+
+.dhol-table th:nth-child(3),
+.dhol-table td:nth-child(3) {
+  width: 20%;
+}
+
+.dhol-table th:nth-child(4),
+.dhol-table td:nth-child(4) {
+  width: 13.5%;
+}
+
+.dhol-table th:nth-child(5),
+.dhol-table td:nth-child(5) {
+  width: 10.5%;
+}
+
+.dhol-table th:last-child,
+.dhol-table td:last-child {
+  width: 26%;
+  min-width: 250px;
+}
+
+.dhol-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.dhol-view-button,
+.dhol-edit-button,
+.dhol-deactivate-button,
+.dhol-activate-button {
+  min-height: 27px;
+  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dhol-view-button {
+  background: #0e9fb0;
+}
+
+.dhol-edit-button {
+  background: #ffd600;
+  color: #111;
+}
+
+.dhol-deactivate-button {
+  background: #dc3545;
+}
+
+.dhol-activate-button {
+  background: #16a34a;
+}
+
+.dhol-view-button:hover,
+.dhol-edit-button:hover,
+.dhol-deactivate-button:hover,
+.dhol-activate-button:hover {
+  filter: brightness(1.08);
+}
+
+.dhol-deactivate-button:disabled,
+.dhol-activate-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.dhol-record-page .dhol-create-header {
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dhol-record-page .dhol-create-header h1 {
+  min-width: 0;
+}
+
+.dhol-record-message,
+.dhol-details-card {
+  margin-bottom: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 214, 0, 0.38);
+  border-radius: 10px;
+  background: #232323;
+}
+
+.dhol-record-message {
+  color: #fff;
+}
+
+.dhol-record-error,
+.dhol-error-message,
+.dhol-form-error {
+  color: #ff8585;
+}
+
+.dhol-age-badge {
+  min-width: 49px;
+  padding: 4px 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #ffd600;
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (max-width: 1250px) and (min-width: 651px) {
+  .dhol-header {
+    align-items: flex-start;
+  }
+
+  .dhol-header h1 {
+    flex: 1 1 100%;
+  }
+
+  .dhol-header-actions {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+}
+
+.dhol-record-message button,
+.dhol-error-message button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: #46566d;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dhol-details-card h2 {
+  margin: 0 0 18px;
+  color: #ffd600;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.dhol-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.dhol-details-grid dl {
+  min-width: 0;
+  margin: 0;
+}
+
+.dhol-detail-field {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.8fr) minmax(0, 1.2fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255, 214, 0, 0.16);
+}
+
+.dhol-detail-field dt {
+  color: #ffd600;
+  font-weight: 700;
+}
+
+.dhol-detail-field dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #fff;
+}
+
+.dhol-status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dhol-status-badge-active {
+  background: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+}
+
+.dhol-status-badge-inactive {
+  background: rgba(220, 53, 69, 0.2);
+  color: #ff8585;
+}
+
+.dhol-error-message {
+  margin: 0 0 16px;
+}
+
+.dhol-error-message p {
+  margin: 0 0 8px;
+}
+
+.dhol-confirm-banner {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(calc(100% - 32px), 620px);
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 214, 0, 0.55);
+  border-radius: 9px;
+  background: #232323;
+  color: #fff;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+  transform: translateX(-50%);
+}
+
+.dhol-confirm-copy {
+  min-width: 0;
+}
+
+.dhol-confirm-banner h2 {
+  margin: 0 0 3px;
+  color: #ffd600;
+  font-size: 16px;
+}
+
+.dhol-confirm-banner p {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.dhol-confirm-banner .dhol-confirm-error {
+  margin-top: 6px;
+  color: #ff8585;
+}
+
+.dhol-confirm-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+.dhol-confirm-ok,
+.dhol-confirm-cancel {
+  min-width: 78px;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dhol-confirm-ok {
+  background: #dc3545;
+}
+
+.dhol-confirm-cancel {
+  background: #46566d;
+}
+
+.dhol-confirm-ok:disabled,
+.dhol-confirm-cancel:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+@media (max-width: 650px) {
+  .dhol-details-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .dhol-record-page .dhol-create-header {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .dhol-details-card,
+  .dhol-record-message {
+    padding: 16px 12px;
+  }
+
+  .dhol-detail-field {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .dhol-confirm-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .dhol-confirm-actions {
+    align-self: flex-end;
   }
 }

@@ -62,14 +62,12 @@ function UsersAdmin() {
             >
               ⏸ Inactive
             </Link>
-            <button
-              type="button"
+            <Link
               className="talent-show-button talent-show-button-add"
-              disabled
-              title="User creation is not connected to an existing workflow."
+              to="/admin/users/create"
             >
               ➕ Add New
-            </button>
+            </Link>
           </div>
         </header>
 
